@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#E8762D",
+          "primary-hover": "#C75F1C",
+          "primary-container": "#E8762D",
+          "on-primary": "#ffffff",
+          "on-surface": "#1A1A1A",
+          "on-surface-variant": "#5A5A5A",
+          "outline-variant": "#E2E2E2",
+          outline: "#8A7266",
+          background: "#F7F5F3",
+          surface: "#F7F5F3",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#F4F1EE",
+          "surface-container": "#EDEAE6",
+          "surface-container-high": "#E5E2DE",
+          secondary: "#E8762D",
+          "secondary-fixed": "#FFDBCA",
+          "on-secondary-fixed": "#331200",
+          error: "#BA1A1A",
+          "error-container": "#FFDAD6",
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        spacing: {
+          "space-2xs": "2px",
+          "space-xs": "4px",
+          "space-sm": "8px",
+          "space-md": "12px",
+          "space-lg": "16px",
+          "space-xl": "24px",
+          "space-2xl": "32px",
+          "space-3xl": "48px"
+        },
+        fontFamily: {
+          sans: ["'Plus Jakarta Sans'", "sans-serif"],
+          "headline-card": ["'Plus Jakarta Sans'", "sans-serif"],
+          "body-small": ["'Plus Jakarta Sans'", "sans-serif"],
+          "display-hero": ["'Plus Jakarta Sans'", "sans-serif"],
+          "section-heading": ["'Plus Jakarta Sans'", "sans-serif"],
+          metadata: ["'Plus Jakarta Sans'", "sans-serif"],
+          "button-label": ["'Plus Jakarta Sans'", "sans-serif"],
+          "body-default": ["'Plus Jakarta Sans'", "sans-serif"],
+          eyebrow: ["'Plus Jakarta Sans'", "sans-serif"],
+          "headline-page": ["'Plus Jakarta Sans'", "sans-serif"],
+          "body-legal-md": ["'Plus Jakarta Sans'", "sans-serif"],
+          "body-legal-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+          "label-caps": ["'Plus Jakarta Sans'", "sans-serif"],
+          "label-ui": ["'Plus Jakarta Sans'", "sans-serif"],
+          "headline-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+          "headline-md": ["'Plus Jakarta Sans'", "sans-serif"],
+          "headline-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+          "code-citation": ["'Plus Jakarta Sans'", "sans-serif"]
+        },
+        fontSize: {
+          "label-caps": ["11px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }],
+          "label-ui": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+          "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }],
+          "body-legal-sm": ["13px", { lineHeight: "19px", fontWeight: "400" }],
+          "headline-sm": ["17px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }],
+          "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.025em", fontWeight: "600" }],
+          "body-legal-md": ["15px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+          "code-citation": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }],
+          eyebrow: ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" }],
+          metadata: ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }]
+        }
+      }
+    }
+  };
+</script></head><body class="bg-background font-sans text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 bottom-0 w-[240px] bg-[#111111] text-white z-50 flex flex-col justify-between border-r border-[#222222] select-none"><div class="flex flex-col"><div class="p-space-lg pb-space-md border-b border-white/10"><div class="flex items-center gap-space-sm mb-space-xs"></div><p class="font-sans text-[10px] uppercase tracking-wider text-[#A0A0A0] leading-tight">Singapore Legal Advisory &amp; Hansard Monitor</p></div><nav class="flex flex-col py-space-md px-space-xs space-y-space-2xs"><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-colors bg-[#1E1E1E] text-white font-semibold shadow-sm border-l-2 border-[#E8762D]" data-path="tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px] text-[#E8762D]">task_alt</span><span class="text-[13px] font-medium tracking-tight">Tasks</span></div><span class="inline-flex items-center justify-center px-space-xs py-0.5 rounded-full text-[11px] font-semibold bg-[#E8762D] text-white">7</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-[#9E9E9E] hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="inbox" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inbox</span><span class="">Inbox</span></div><span class="inline-flex items-center justify-center px-space-xs py-0.5 rounded-full text-[11px] font-semibold bg-white/10 text-white">3</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-[#9E9E9E] hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="documents" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">description</span><span class="">Documents</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-[#9E9E9E] hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="parliament" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_balance</span><span class="">Parliament</span></div><span class="inline-flex items-center justify-center px-space-2xs py-0.5 rounded text-[10px] uppercase font-bold tracking-wider text-[#FFBA95] border border-[#E8762D]/40">Gazette</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-[#9E9E9E] hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="">Settings</span></div></a></nav></div><div class="p-space-md border-t border-white/10 bg-black/30"><div class="flex items-center gap-space-xs text-[#A0A0A0] mb-1"><span class="w-2 h-2 rounded-full bg-[#10b981] inline-block animate-pulse"></span><span class="font-sans text-[10px] tracking-wider uppercase font-semibold text-[#A0A0A0]">Live Jurisdiction Feed</span></div><p class="font-sans text-[#707070] leading-snug text-[12px]">SG Parliament Session 14 • Sitting No. 38</p></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface-container-lowest border-b border-outline-variant z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><img alt="Lex Sentinel Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WoJfkJOqqjwQGn_BlwBUTVHO737JS7UEhpfO6XLxIvLG8FM8kQXTAo0YS-HSmalEHEAKP9FIxv6n-wRkgBy0490KADwF7cYyGkxbuzOCcSOJBDCvncyO9hA7hUG4vQTZG00fUujjxoxaKM0fzZYhhwTRzIRecdxoJarNTBQENuB38VRLHUD7B-VGeaI3UNtPiNAedkSguxUGwThdffkvwLGuzqLkxRkSTzttVsiMeN6YbipMMDRzry3g"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-[38px] pl-9 pr-space-md rounded-lg bg-surface-container-low border border-outline-variant text-[13px] font-sans text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-colors" placeholder="Search clauses, documents, or parliament items" type="text"></div></div><div class="flex items-center gap-space-xl"><div class="hidden md:flex items-center text-on-surface-variant font-sans text-[13px]"><span class="material-symbols-outlined text-on-surface-variant text-[16px] mr-1.5">calendar_today</span>Wednesday, 5 August 2026</div><div class="h-5 w-px bg-outline-variant hidden md:block"></div><div class="flex items-center gap-space-sm cursor-pointer py-1 px-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="w-8 h-8 rounded-full bg-[#1A1A1A] flex items-center justify-center"><span class="material-symbols-outlined text-white text-[18px]">person</span></div><div class="flex flex-col text-left"><span class="font-sans text-[13px] text-on-surface font-semibold leading-tight">Amelia Tan</span><span class="font-sans text-[11px] text-on-surface-variant leading-tight">Senior Partner / Corporate</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px] ml-1">expand_more</span></div></div></header><main class="relative pt-16 bg-background min-h-screen px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Interactive script to handle simulated user interactions -->
+<script>
+    function toggleTaskStatus(btn) {
+      const isDone = btn.getAttribute('data-completed') === 'true';
+      const label = document.getElementById('task-status-label');
+      const pill = document.getElementById('status-indicator-dot');
+      if (!isDone) {
+        btn.setAttribute('data-completed', 'true');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] mr-1.5 text-primary">check_circle</span>Task Reviewed';
+        btn.className = "inline-flex items-center px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-sans text-[13px] font-medium border border-outline-variant shadow-sm transition-all";
+        if (label) label.textContent = 'STATUS: REVIEWED (PENDING SIGN-OFF)';
+        if (pill) pill.className = 'w-2 h-2 rounded-full bg-primary inline-block';
+      } else {
+        btn.setAttribute('data-completed', 'false');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] mr-1.5">check</span>Mark Task Reviewed';
+        btn.className = "inline-flex items-center px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-sans text-[13px] font-medium border border-outline-variant shadow-sm hover:bg-surface-container-low transition-all";
+        if (label) label.textContent = 'STATUS: ACTION REQUIRED';
+        if (pill) pill.className = 'w-2 h-2 rounded-full bg-error inline-block animate-pulse';
+      }
+    }
+
+    function toggleAssignModal() {
+      const modal = document.getElementById('assign-popover');
+      if (modal) {
+        modal.classList.toggle('hidden');
+      }
+    }
+  </script>
+<!-- Top Breadcrumbs & Fast Action Utility Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md mb-space-lg gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-sans text-[13px]">
+<a class="inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors group" href="#">
+<span class="material-symbols-outlined text-[16px] mr-1 group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span class="">Back to Morning Briefing</span>
+</a>
+<span class="text-outline-variant select-none">/</span>
+<span class="text-on-surface-variant font-normal">Real Estate Practice</span>
+<span class="text-outline-variant select-none">/</span>
+<span class="text-on-surface font-semibold">TASK-SG-2026-0884</span>
+</div>
+<!-- Quick Global Actions -->
+<div class="flex items-center gap-space-sm relative">
+<button class="inline-flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-sans text-[13px] font-medium transition-colors" onclick="toggleAssignModal()">
+<span class="material-symbols-outlined text-[16px] mr-1.5">person_add</span>
+        Assign Task
+      </button>
+<!-- Assign Popover Dialog -->
+<div class="hidden absolute top-10 right-0 z-50 w-72 bg-surface-container-lowest rounded-lg p-space-md shadow-xl border border-outline-variant text-left" id="assign-popover">
+<p class="font-sans text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Reassign Briefing Dossier</p>
+<div class="space-y-1 mb-space-md">
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 text-left rounded hover:bg-surface-container-low text-[13px] font-sans text-on-surface">
+<span class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-bold">DO</span>
+<span class="">Daniel Ong (Lead Partner)</span>
+</span>
+<span class="material-symbols-outlined text-primary text-[16px]">check</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 text-left rounded hover:bg-surface-container-low text-[13px] font-sans text-on-surface">
+<span class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface text-[10px] flex items-center justify-center font-bold">CL</span>
+<span class="">Cheryl Lim (Senior Associate)</span>
+</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 text-left rounded hover:bg-surface-container-low text-[13px] font-sans text-on-surface">
+<span class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface text-[10px] flex items-center justify-center font-bold">KT</span>
+<span class="">Kelvin Teo (Junior Counsel)</span>
+</span>
+</button>
+</div>
+<div class="pt-space-xs flex justify-end">
+<button class="px-space-sm py-1 rounded text-[11px] font-sans uppercase text-primary font-bold hover:bg-surface-container" onclick="toggleAssignModal()">Dismiss</button>
+</div>
+</div>
+<button class="inline-flex items-center px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-sans text-[13px] font-medium border border-outline-variant shadow-sm hover:bg-surface-container-low transition-all" data-completed="false" id="task-review-btn" onclick="toggleTaskStatus(this)">
+<span class="material-symbols-outlined text-[16px] mr-1.5">check</span>
+        Mark Task Reviewed
+      </button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface border border-outline-variant shadow-sm hover:bg-surface-container-low transition-all" title="Export statutory brief to PDF">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</div>
+<!-- Editorial Headline Section -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl mb-space-xl border border-outline-variant shadow-sm relative overflow-hidden">
+<!-- Subtle editorial watermarking pattern -->
+<div class="absolute -right-6 -bottom-6 select-none opacity-[0.03] pointer-events-none text-on-surface font-sans text-[180px] leading-none font-bold">
+      §
+    </div>
+<div class="flex flex-wrap items-center gap-space-sm mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-semibold tracking-wide bg-[#FDF0E8] text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+        HIGH IMPACT
+      </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-semibold font-sans bg-surface-container text-on-surface tracking-wider uppercase">
+        AMENDMENT ALERT
+      </span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] ml-auto">
+<span class="w-2 h-2 rounded-full bg-error inline-block animate-pulse" id="status-indicator-dot"></span>
+<span class="tracking-wide text-[12px] font-medium" id="task-status-label">STATUS: ACTION REQUIRED</span>
+</span>
+</div>
+<h1 class="font-sans text-[26px] md:text-[30px] font-semibold text-on-surface tracking-tight max-w-4xl mb-space-sm leading-tight">
+      Subletting rules may affect 2 documents across firm vault
+    </h1>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant text-[13px]">
+<span class="font-semibold text-on-surface">TASK-SG-2026-0884</span>
+<span class="text-outline-variant">•</span>
+<span class="">Hansard Session 14, Sitting 38</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">bolt</span>
+        Detected 42 mins ago via Official SG Hansard Feed
+      </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface">Target Portfolio: JTC Industrial Leases</span>
+</div>
+</div>
+<!-- Primary Asymmetric Two-Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT/MAIN COLUMN (Approx 70% / 8 Columns): Documents Workspace -->
+<div class="lg:col-span-8 flex flex-col space-y-space-lg">
+<!-- Section Header -->
+<div class="flex items-end justify-between px-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-[20px] font-semibold tracking-tight text-on-surface">Affected Documents</h2>
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#1A1A1A] text-white text-[11px] font-bold">2</span>
+</div>
+<p class="text-[13px] text-on-surface-variant mt-1 leading-relaxed">
+            Review each affected agreement to inspect statutory redlines and approve or reject recommended language.
+          </p>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="">Automatic Redline Active</span>
+</div>
+</div>
+<!-- CARD 1: PRIMARY / MOST URGENT -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-space-xl relative overflow-hidden group transition-all hover:shadow-md">
+<!-- Urgent Accent Bar -->
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex flex-col space-y-space-md pl-space-xs">
+<!-- Header info inside card -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">gavel</span>
+<h3 class="text-[17px] font-semibold text-on-surface group-hover:text-primary transition-colors tracking-tight">
+                  Tenancy Agreement (Pte)
+                </h3>
+</div>
+<p class="text-[13px] text-on-surface-variant">
+                Standard Template V3.0 • Real Estate &amp; Construction • Matter Lead: <strong class="text-on-surface font-semibold">Daniel Ong</strong>
+</p>
+</div>
+<!-- Chips -->
+<div class="flex items-center gap-1.5 self-start">
+<span class="px-2 py-0.5 rounded text-[11px] uppercase bg-[#FFDBCA] text-[#331200] font-bold tracking-wide">
+                2 clauses flagged
+              </span>
+<span class="px-2 py-0.5 rounded text-[11px] uppercase bg-[#FDF0E8] text-primary font-bold tracking-wide">
+                High Exposure
+              </span>
+</div>
+</div>
+<!-- Synthetic Preview Strip / Redline Snippet -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-space-sm border border-outline-variant/60">
+<div class="flex items-center justify-between text-[11px] uppercase font-semibold text-on-surface-variant">
+<span class="font-bold text-primary tracking-wide">Conflict Diagnosis</span>
+<span class="tracking-wide">JTC Circular JTC/LPD/2026-04</span>
+</div>
+<p class="text-[14.5px] leading-relaxed text-on-surface">
+<span class="font-semibold text-on-surface">Clause 7.2 (Subletting &amp; Assignment)</span> and <span class="font-semibold text-on-surface">Clause 7.3 (Landlord Consent)</span> conflict directly with JTC statutory quantum reduction from <span class="line-through text-error decoration-2 decoration-error px-1 bg-error-container/40 rounded">50% of GFA</span> to <span class="font-semibold text-primary bg-[#FFDBCA]/60 px-1 rounded">30% of GFA</span>.
+            </p>
+<!-- Inline Redline Micro-Visualization -->
+<div class="p-space-sm bg-surface-container-lowest rounded border border-outline-variant/60 space-y-1.5">
+<div class="flex items-center gap-2 text-[12px] font-mono text-on-surface-variant">
+<span class="text-error font-bold">- Clause 7.2(a):</span>
+<span class="line-through text-on-surface-variant/70">"...the Tenant shall not sublet more than fifty per centum (50%) of the floor area..."</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] font-mono text-on-surface">
+<span class="text-primary font-bold">+ Proposed Draft:</span>
+<span class="font-semibold bg-[#FFDBCA]/40 px-1">"...the Tenant shall not sublet more than thirty per centum (30%) of the gross floor area as mandated by JTC regulations..."</span>
+</div>
+</div>
+</div>
+<!-- Bottom Meta & Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-lg text-[13px] text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">history</span>
+<span class="">Last revised 12 Jul 2026</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">description</span>
+<span class="">8 Active Client Matters Bound</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-[11px] uppercase text-error font-bold tracking-wider px-2 py-1 bg-error-container/30 rounded">Action Required</span>
+<a class="inline-flex items-center justify-center px-space-lg py-2 rounded-lg bg-primary text-white font-sans text-[13px] font-medium hover:bg-primary-hover transition-colors shadow-sm gap-1.5" href="#">
+<span class="">Review Suggested Amendments</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: SECONDARY / PENDING REVIEW -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-space-xl relative overflow-hidden group transition-all hover:shadow-md">
+<!-- Neutral Accent Bar -->
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-outline-variant"></div>
+<div class="flex flex-col space-y-space-md pl-space-xs">
+<!-- Header info inside card -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">assignment_turned_in</span>
+<h3 class="text-[17px] font-semibold text-on-surface group-hover:text-primary transition-colors tracking-tight">
+                  Option To Purchase (Private Commercial)
+                </h3>
+</div>
+<p class="text-[13px] text-on-surface-variant">
+                Master Contract V1.0 • Real Estate Practice • Matter Lead: <strong class="text-on-surface font-semibold">Daniel Ong</strong>
+</p>
+</div>
+<!-- Chips -->
+<div class="flex items-center gap-1.5 self-start">
+<span class="px-2 py-0.5 rounded text-[11px] uppercase bg-surface-container text-on-surface font-semibold tracking-wide">
+                1 clause flagged
+              </span>
+<span class="px-2 py-0.5 rounded text-[11px] uppercase bg-[#FFF4E5] text-[#A75416] font-semibold tracking-wide">
+                Medium Exposure
+              </span>
+</div>
+</div>
+<!-- Summary snippet -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-space-xs border border-outline-variant/60">
+<div class="flex items-center justify-between text-[11px] uppercase font-semibold text-on-surface-variant">
+<span class="font-bold text-on-surface tracking-wide">Statutory Citation Divergence</span>
+<span class="tracking-wide">Parliament Session 14, Answer #12</span>
+</div>
+<p class="text-[14.5px] leading-relaxed text-on-surface">
+<span class="font-semibold text-on-surface">Clause 14.1 (Ancillary Subletting Warranties)</span> references repealed JTC 2021 circular sublease definitions, missing compulsory statutory disclosure of market rents prior to purchaser completion.
+            </p>
+</div>
+<!-- Bottom Meta & Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-lg text-[13px] text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">history</span>
+<span class="">Last revised 04 Mar 2026</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">description</span>
+<span class="">3 Active Matters Bound</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-[11px] uppercase text-on-surface-variant font-bold tracking-wider px-2 py-1 bg-surface-container rounded">Pending Review</span>
+<a class="inline-flex items-center justify-center px-space-lg py-2 rounded-lg bg-surface-container-lowest text-on-surface border border-outline-variant font-sans text-[13px] font-medium hover:bg-surface-container-low transition-colors shadow-sm gap-1.5" href="#">
+<span class="">Review Suggested Amendments</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Contextual Advisory Panel -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest border border-outline-variant flex items-start gap-space-md">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">info</span>
+<div class="space-y-1">
+<h4 class="text-[14px] font-semibold text-on-surface">Institutional Clause Synchronization</h4>
+<p class="text-[13px] text-on-surface-variant leading-relaxed">
+            Approving changes in both master templates will trigger optional batch pull-requests across all 11 linked active transactions in the Singapore Corporate &amp; Conveyancing registry. Standard clause locks remain active until senior partner sign-off.
+          </p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (Approx 30% / 4 Columns): Statutory Hansard Authority & Dossier -->
+<div class="lg:col-span-4 flex flex-col space-y-space-lg">
+<!-- Hansard Debates / Source Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface text-[18px]">account_balance</span>
+<span class="text-[12px] font-semibold uppercase tracking-wider text-primary">Hansard Debates</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider bg-surface-container text-on-surface">Official Record</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-[17px] font-semibold tracking-tight text-on-surface leading-snug">
+            Data on Applications for Subletting of JTC Properties
+          </h3>
+<p class="text-[13px] text-on-surface-variant">
+            Written Answer • 5 August 2026<br>
+<span class="text-on-surface font-medium">The Minister for Trade and Industry (Mr. Gan Kim Yong)</span>
+</p>
+</div>
+<!-- Hansard Extract Blockquote -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/60 relative overflow-hidden">
+<div class="text-primary opacity-20 select-none absolute -top-1 left-2 font-sans font-bold text-4xl leading-none">“</div>
+<p class="text-[13.5px] text-on-surface italic relative z-10 pl-2 leading-relaxed">
+            Industrial lessees seeking to sublet standard factory space under JTC leases must note that effective Q3 2026, the allowable subletting quantum is revised to 30% of gross floor area, with mandatory statutory declaration of prevailing market rents directly to the lessor prior to execution.
+          </p>
+</div>
+<a class="inline-flex items-center text-[13px] font-semibold text-primary hover:text-primary-hover transition-colors gap-1 pt-space-xs border-b border-primary/40 hover:border-primary pb-0.5 w-fit" href="#">
+<span class="">Read Full Hansard Official Report</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- Statutory Authority Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant shadow-sm space-y-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface text-[18px]">library_books</span>
+<span class="text-[12px] font-semibold uppercase tracking-wider text-primary">Statutory Instruments</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded-lg border border-outline-variant/50">
+<p class="text-[13.5px] text-on-surface font-semibold">Jurong Town Corporation Act 1968</p>
+<p class="text-[12px] text-on-surface-variant mt-0.5 leading-relaxed">
+              Section 18(2) • Restrictions on alienation, assignment and underletting of industrial land.
+            </p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg border border-outline-variant/50">
+<p class="text-[13.5px] text-on-surface font-semibold">Leasehold Covenants Circular</p>
+<p class="text-[12px] text-on-surface-variant mt-0.5 leading-relaxed">
+              Circular No: JTC/LPD/2026-04 • Effective date 15 August 2026.
+            </p>
+</div>
+</div>
+</div>
+<!-- Historical Precedent / Audit Micro-card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-sm flex items-center justify-between text-[13px] hover:border-primary/40 transition-colors cursor-pointer group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+<span class="text-[13px] font-medium text-on-surface group-hover:text-primary transition-colors">View 2021 Subletting Precedent</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</div>
+</div>
+</div>
+</div></main></div>
+
+
+</body></html>

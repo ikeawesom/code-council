@@ -6,6 +6,8 @@ the same contract, so swapping is a config change, not a rewrite.
 """
 from typing import Any, Protocol
 
+from app.config import settings
+
 
 class LLMProvider(Protocol):
     name: str
@@ -21,6 +23,24 @@ class LLMError(RuntimeError):
 
 
 def get_provider(name: str | None = None) -> LLMProvider:
-    """Factory dispatching on settings.llm_provider."""
-    # TODO(M3): claude_cli | local | mock
-    raise NotImplementedError
+    """Factory dispatching on settings.llm_provider.
+
+    Imports are local to avoid import cycles (each provider module imports
+    `LLMError` from this module).
+    """
+    provider_name = name or settings.llm_provider
+
+    if provider_name == "claude_cli":
+        from app.llm.claude_cli import ClaudeCliProvider
+
+        return ClaudeCliProvider()
+    if provider_name == "local":
+        from app.llm.local import LocalProvider
+
+        return LocalProvider()
+    if provider_name == "mock":
+        from app.llm.mock import MockProvider
+
+        return MockProvider()
+
+    raise LLMError(f"unknown llm provider: {provider_name!r}")

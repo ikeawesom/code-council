@@ -24,12 +24,22 @@ uvicorn app.main:app --reload --port 8000
 cd frontend && npm install && npm run dev
 ```
 
-Drop contracts (PDF/DOCX) into `data/inbox/`, then:
+Drop contracts (PDF/DOCX) into `data/inbox/<practice-sector>/`, then:
 
 ```bash
-python scripts/ingest.py      # documents -> vault + graph
-python scripts/run_daily.py   # scrape -> match -> proposals
+python scripts/ingest.py                 # documents -> vault + graph
+python scripts/ingest.py --llm mock      # same, no LLM calls (fast, deterministic)
+python scripts/run_daily.py              # scrape -> match -> proposals   (M3, not built yet)
 ```
+
+`ingest.py` flags: `--llm mock|claude_cli|local` overrides the provider,
+`--force` re-tags concepts that are already recorded, `--only <slug>` ingests a
+single document. Re-running is idempotent - the vault markdown comes out
+byte-identical apart from `ingested_at`, and no database row is duplicated.
+
+The sub-folder name under `data/inbox/` becomes the document's practice sector,
+so `data/inbox/real-estate/lease.pdf` is filed under `real-estate`. Add a new
+sector by creating a folder; nothing in the code needs to change.
 
 ## Layout
 

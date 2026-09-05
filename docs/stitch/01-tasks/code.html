@@ -1,0 +1,512 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Lex Sentinel - Tasks</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#E8762D",
+            "primary-hover": "#C75F1C",
+            "primary-container": "#FFBA95",
+            "on-primary": "#FFFFFF",
+            "text-main": "#1A1A1A",
+            "text-secondary": "#5A5A5A",
+            "text-tertiary": "#8A8A8A",
+            "surface": "#FFFFFF",
+            "surface-low": "#FBF9F8",
+            "background": "#F7F5F3",
+            "border-hairline": "#E2E2E2",
+            "sidebar-bg": "#141C24",
+            "sidebar-active": "#E8762D"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #1A1A1A;
+        background-color: #F7F5F3;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-main antialiased min-h-screen">
+<!-- Sidebar -->
+<aside class="fixed left-0 top-0 bottom-0 w-[240px] bg-sidebar-bg text-white z-50 flex flex-col justify-between border-r border-[#202934] select-none">
+<div class="flex flex-col">
+<!-- Logo Header -->
+<div class="p-5 pb-4 border-b border-[#222E3A]">
+<div class="flex items-center gap-2.5 mb-1.5">
+
+
+</div>
+<p class="text-[10.5px] uppercase tracking-[0.08em] text-[#8694A6] font-semibold leading-tight">Singapore Legal Advisory &amp; Hansard Monitor</p>
+</div>
+<!-- Main Navigation -->
+<nav class="flex flex-col py-3 px-2 space-y-1">
+<!-- Active Tasks tab highlighted in orange #E8762D -->
+<a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded-md bg-primary text-white font-medium transition-colors shadow-sm" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px]">task_alt</span>
+<span class="text-[13.5px]">Tasks</span>
+</div>
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[11px] font-semibold bg-white/20 text-white">7</span>
+</a>
+<!-- Sub-items for Tasks -->
+<div class="flex flex-col pl-5 pr-1 py-1 space-y-0.5 text-[12px]">
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded text-white font-medium bg-white/10 transition-colors" href="#">
+<span class="truncate">All practice areas</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-primary text-white font-semibold">7</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1 rounded text-[#9CA9B8] hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="truncate">Real Estate</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-white/10 text-white">2</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1 rounded text-[#9CA9B8] hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="truncate">Mergers &amp; Acquisitions</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-white/10 text-white">1</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1 rounded text-[#9CA9B8] hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="truncate">Energy &amp; Infrastructure</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-white/10 text-white">1</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1 rounded text-[#9CA9B8] hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="truncate">General</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-white/10 text-white">1</span>
+</a>
+</div>
+<a class="flex items-center justify-between px-3 py-2 rounded-md text-[#9CA9B8] hover:bg-white/5 hover:text-white transition-colors text-[13.5px] font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px]">inbox</span>
+<span class="">Inbox</span>
+</div>
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[11px] font-medium bg-white/10 text-[#C4D0DE]">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-md text-[#9CA9B8] hover:bg-white/5 hover:text-white transition-colors text-[13.5px] font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px]">description</span>
+<span class="">Documents</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-md text-[#9CA9B8] hover:bg-white/5 hover:text-white transition-colors text-[13.5px] font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px]">account_balance</span>
+<span class="">Parliament</span>
+</div>
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[9.5px] uppercase font-bold tracking-wider text-primary border border-primary/30">Gazette</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-md text-[#9CA9B8] hover:bg-white/5 hover:text-white transition-colors text-[13.5px] font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px]">settings</span>
+<span class="">Settings</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Live Status Footer -->
+<div class="p-4 border-t border-[#222E3A] bg-[#0E141B]">
+<div class="flex items-center gap-2 text-[#8694A6] mb-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+<span class="text-[10px] font-semibold tracking-[0.08em] uppercase text-[#8694A6]">Live Jurisdiction Feed</span>
+</div>
+<p class="text-[11.5px] text-[#C4D0DE]/80 leading-snug">SG Parliament Session 14 • Sitting No. 38</p>
+</div>
+</aside>
+<!-- Page Content Shell -->
+<div class="pl-[240px]">
+<!-- Top Header -->
+<header class="fixed top-0 left-[240px] right-0 h-16 bg-surface border-b border-border-hairline z-40 flex items-center justify-between px-8">
+<div class="flex items-center gap-6 flex-1 max-w-xl">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#8A8A8A] text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-4 rounded-md bg-[#F4F2F0] border border-transparent text-[13.5px] text-text-main placeholder:text-text-secondary/70 focus:outline-none focus:border-border-hairline focus:bg-surface transition-all" placeholder="Search clauses, documents, or parliament items" type="text">
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center text-text-secondary text-[13px] font-medium">
+<span class="material-symbols-outlined text-[#8A8A8A] text-[16px] mr-1.5">calendar_today</span>
+          Wednesday, 5 August 2026
+        </div>
+<div class="h-4 w-px bg-border-hairline hidden md:block"></div>
+<div class="flex items-center gap-2.5 cursor-pointer py-1 px-1.5 rounded-md hover:bg-background transition-colors">
+<div class="w-8 h-8 rounded-full bg-sidebar-bg text-white flex items-center justify-center font-medium text-[13px]">
+            AT
+          </div>
+<div class="flex flex-col text-left">
+<span class="text-[13px] text-text-main font-semibold leading-tight">Amelia Tan</span>
+<span class="text-[11px] text-text-secondary leading-tight">Senior Partner / Corporate</span>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] text-[18px]">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="relative pt-20 px-8 py-8 max-w-7xl">
+<div class="flex flex-col w-full">
+<!-- Header Section -->
+<div class="flex flex-col mb-7">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 pb-3 border-b border-border-hairline">
+<div class="flex flex-col">
+<div class="flex items-center gap-3">
+<h1 class="text-[34px] font-medium text-text-main tracking-tight leading-tight">Tasks</h1>
+<span class="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-[12px] font-semibold bg-text-main text-white">7 total</span>
+</div>
+<p class="text-[14px] text-text-secondary mt-1">
+                7 items flagged from Parliament, 5 August 2026
+              </p>
+</div>
+<div class="flex items-center gap-5 self-start sm:self-auto">
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-secondary font-medium">Portfolio sync: 07:45 SGT</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-border-hairline bg-surface text-text-main hover:bg-[#F2EFEB] transition-colors text-[13px] font-medium shadow-sm" id="mark-all-btn">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">done_all</span>
+                Mark all as read
+              </button>
+</div>
+</div>
+<!-- Filter Pills Bar -->
+<div class="flex items-center justify-between gap-4 pt-4">
+<div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0" id="status-filters">
+<button class="filter-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all bg-[#EDEAE7] text-text-main hover:bg-[#E5E1DD]" data-filter="all">
+<span class="">All</span>
+<span class="px-1.5 py-0.2 rounded-full text-[11px] bg-text-main text-white font-semibold">7</span>
+</button>
+<button class="filter-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all bg-[#EDEAE7] text-text-main hover:bg-[#E5E1DD]" data-filter="new">
+<span class="">New</span>
+<span class="px-1.5 py-0.2 rounded-full text-[11px] bg-white text-text-secondary font-medium">4</span>
+</button>
+<button class="filter-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all bg-[#EDEAE7] text-text-main hover:bg-[#E5E1DD]" data-filter="in-progress">
+<span class="">In progress</span>
+<span class="px-1.5 py-0.2 rounded-full text-[11px] bg-white text-text-secondary font-medium">2</span>
+</button>
+<!-- Signature orange #E8762D active filter pill matching the screenshot/specs -->
+<button class="filter-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all bg-primary text-white shadow-sm" data-filter="applied">
+<span class="">Approved</span>
+<span class="px-1.5 py-0.2 rounded-full text-[11px] bg-white/20 text-white font-medium">1</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Task Stream Cards List -->
+<div class="flex flex-col gap-4" id="task-list-container">
+<!-- Card 1: Subletting JTC (High Impact, New) -->
+<article class="task-card group relative bg-surface border border-border-hairline rounded-lg p-6 shadow-sm transition-all hover:border-[#D5D0CB] hidden" data-area="real-estate" data-status="new">
+<div class="flex flex-col gap-3.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#FDEAE8] text-[#B83227]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B83227] inline-block"></span>
+                    High impact
+                  </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10.5px] tracking-[0.08em] uppercase font-semibold text-text-secondary border border-border-hairline bg-surface">
+                    Amendment
+                  </span>
+</div>
+<span class="text-[13px] text-text-secondary font-mono">Ref: SG-HA-2026-0805-41</span>
+</div>
+<div class="flex flex-col gap-1.5 max-w-3xl">
+<h2 class="text-[20px] font-medium text-text-main leading-snug tracking-tight hover:text-primary transition-colors cursor-pointer">
+                  Subletting rules may affect 2 clauses in Tenancy Agreement (Pte)
+                </h2>
+<p class="text-[14.5px] text-text-secondary leading-relaxed">
+                  Parliament discussed new conditions on subletting JTC industrial properties. Clauses 7.2 and 7.3 set out subletting consent and may now be inconsistent.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3 border-t border-border-hairline/60">
+<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-text-secondary">
+<span class="font-medium text-text-main">Real Estate</span>
+<span class="text-border-hairline">•</span>
+<span class="">Tenancy Agreement (Pte)</span>
+<span class="text-border-hairline">•</span>
+<span class="truncate max-w-xs md:max-w-sm text-text-secondary/80">Source: Data on Applications for Subletting of JTC Properties</span>
+<span class="text-border-hairline">•</span>
+<span class="text-text-secondary/70">Flagged 07:04 today</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3.5 py-1.5 bg-primary hover:bg-primary-hover text-white rounded text-[13px] font-medium transition-colors inline-flex items-center gap-1 shadow-sm">
+                    Review amendment
+                    <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Rental Relief (In Progress) -->
+<article class="task-card group relative bg-surface border border-border-hairline rounded-lg p-6 shadow-sm transition-all hover:border-[#D5D0CB] hidden" data-area="real-estate" data-status="in-progress">
+<div class="flex flex-col gap-3.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#FDEAE8] text-[#B83227]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B83227] inline-block"></span>
+                    High impact
+                  </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10.5px] tracking-[0.08em] uppercase font-semibold text-primary border border-primary/20 bg-primary/5">
+                    New Legislation
+                  </span>
+</div>
+<span class="text-[13px] text-text-secondary font-mono">Ref: SG-HA-2026-0805-47</span>
+</div>
+<div class="flex flex-col gap-1.5 max-w-3xl">
+<h2 class="text-[20px] font-medium text-text-main leading-snug tracking-tight hover:text-primary transition-colors cursor-pointer">
+                  Rental relief measures affect the rent review clause in Option To Purchase (Private Commercial)
+                </h2>
+<p class="text-[14.5px] text-text-secondary leading-relaxed">
+                  Parliamentary debate addressed commercial tenant relief frameworks. Clause 11.4 rent adjustment escalation mechanism may be superseded by statutory caps.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3 border-t border-border-hairline/60">
+<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-text-secondary">
+<span class="font-medium text-text-main">Real Estate</span>
+<span class="text-border-hairline">•</span>
+<span class="">Option To Purchase (Private Commercial)</span>
+<span class="text-border-hairline">•</span>
+<span class="truncate max-w-xs md:max-w-sm text-text-secondary/80">Source: Rental Reductions, Free Lunchtime Parking to Boost Footfall</span>
+<span class="text-border-hairline">•</span>
+<span class="text-text-secondary/70">Flagged 07:12 today</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 bg-[#EDEAE7] hover:bg-[#E5E1DD] text-text-main rounded text-[13px] font-medium transition-colors inline-flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-text-secondary">visibility</span>
+                    View in progress
+                  </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Foreign Investment Review (Medium Impact, New) -->
+<article class="task-card group relative bg-surface border border-border-hairline rounded-lg p-6 shadow-sm transition-all hover:border-[#D5D0CB] hidden" data-area="mna" data-status="new">
+<div class="flex flex-col gap-3.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#FFF1E8] text-[#C75F1C]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#E8762D] inline-block"></span>
+                    Medium impact
+                  </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10.5px] tracking-[0.08em] uppercase font-semibold text-text-secondary border border-border-hairline bg-surface">
+                    Amendment
+                  </span>
+</div>
+<span class="text-[13px] text-text-secondary font-mono">Ref: SG-HA-2026-0805-52</span>
+</div>
+<div class="flex flex-col gap-1.5 max-w-3xl">
+<h2 class="text-[20px] font-medium text-text-main leading-snug tracking-tight hover:text-primary transition-colors cursor-pointer">
+                  Foreign investment review thresholds may affect completion conditions in Joint Venture Agreement
+                </h2>
+<p class="text-[14.5px] text-text-secondary leading-relaxed">
+                  Revised National Security and Critical Infrastructure investment notifications discussed in sitting. Condition precedent 4.1(c) requires statutory notification threshold update.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3 border-t border-border-hairline/60">
+<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-text-secondary">
+<span class="font-medium text-text-main">Mergers &amp; Acquisitions</span>
+<span class="text-border-hairline">•</span>
+<span class="">Joint Venture Agreement (SG/Cross-border)</span>
+<span class="text-border-hairline">•</span>
+<span class="text-text-secondary/70">Flagged 07:25 today</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3.5 py-1.5 bg-primary hover:bg-primary-hover text-white rounded text-[13px] font-medium transition-colors inline-flex items-center gap-1 shadow-sm">
+                    Review amendment
+                    <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4: BCA Contractor Duties (Medium Impact, New) -->
+<article class="task-card group relative bg-surface border border-border-hairline rounded-lg p-6 shadow-sm transition-all hover:border-[#D5D0CB] hidden" data-area="energy" data-status="new">
+<div class="flex flex-col gap-3.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#FFF1E8] text-[#C75F1C]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#E8762D] inline-block"></span>
+                    Medium impact
+                  </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10.5px] tracking-[0.08em] uppercase font-semibold text-primary border border-primary/20 bg-primary/5">
+                    New Legislation
+                  </span>
+</div>
+<span class="text-[13px] text-text-secondary font-mono">Ref: SG-HA-2026-0805-59</span>
+</div>
+<div class="flex flex-col gap-1.5 max-w-3xl">
+<h2 class="text-[20px] font-medium text-text-main leading-snug tracking-tight hover:text-primary transition-colors cursor-pointer">
+                  Revised BCA contractor duties affect the indemnity clause in Agreement for Consultancy (BCA)
+                </h2>
+<p class="text-[14.5px] text-text-secondary leading-relaxed">
+                  Ministry of National Development statement on statutory workplace safety and structural verification responsibilities impacts standard indemnity clause 9.2.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3 border-t border-border-hairline/60">
+<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-text-secondary">
+<span class="font-medium text-text-main">Energy &amp; Infrastructure</span>
+<span class="text-border-hairline">•</span>
+<span class="">Agreement for Consultancy (BCA)</span>
+<span class="text-border-hairline">•</span>
+<span class="text-text-secondary/70">Flagged 07:31 today</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3.5 py-1.5 bg-primary hover:bg-primary-hover text-white rounded text-[13px] font-medium transition-colors inline-flex items-center gap-1 shadow-sm">
+                    Review amendment
+                    <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 5: Approved Task Card (Data-handling obligations) - Currently Active in Screenshot -->
+<article class="task-card group relative bg-surface border border-border-hairline rounded-lg p-6 shadow-sm transition-all" data-area="general" data-status="applied">
+<div class="flex flex-col gap-3.5">
+<!-- Alert tags & Ref -->
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[12px] font-medium bg-[#EFECE9] text-text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8A8A8A] inline-block"></span>
+                    Low impact
+                  </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10.5px] tracking-[0.08em] uppercase font-semibold text-text-secondary border border-border-hairline bg-surface">
+                    AMENDMENT
+                  </span>
+</div>
+<span class="text-[13px] text-text-secondary font-mono">Ref: SG-HA-2026-0805-63</span>
+</div>
+<!-- Title & Summary -->
+<div class="flex flex-col gap-1 max-w-3xl">
+<h2 class="text-[20px] font-medium text-text-main leading-snug tracking-tight hover:text-primary transition-colors cursor-pointer">
+                  Data-handling obligations affect clause 4 of NDA template
+                </h2>
+<p class="text-[14.5px] text-text-secondary leading-relaxed">
+                  Routine alignment with updated Personal Data Protection regulatory guidance clarified in ministerial response.
+                </p>
+</div>
+<!-- Metadata & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3 border-t border-border-hairline/60">
+<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-text-secondary">
+<span class="font-medium text-text-main">General</span>
+<span class="text-border-hairline">•</span>
+<span class="">Mutual Non-Disclosure Agreement (Standard)</span>
+<span class="text-border-hairline">•</span>
+<span class="">Applied by Amelia Tan, 08:20 today</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3.5 py-1.5 bg-[#F7F5F3] hover:bg-[#EFECE9] border border-border-hairline text-text-main rounded text-[13px] font-medium transition-colors inline-flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">verified</span>
+                    View applied changes
+                  </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- System Baseline State Header Divider -->
+<div class="mt-12 mb-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-[12px] uppercase tracking-[0.08em] font-semibold text-primary">System Baseline State</span>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-[0.08em] text-[#C75F1C] bg-[#FFE5D4]">Simulation</span>
+</div>
+<span class="text-[13px] text-text-secondary">Display when all 7 tasks resolved</span>
+</div>
+<!-- Below-the-fold Empty State Container Card -->
+<div class="bg-surface border border-border-hairline rounded-lg p-12 shadow-sm flex flex-col items-center justify-center text-center max-w-4xl mx-auto my-4 w-full">
+<!-- Emblem / Broadside Seal Icon -->
+<div class="w-12 h-12 rounded-full bg-[#F4F2F0] flex items-center justify-center mb-6 text-text-main">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<!-- Calm Page Subheading -->
+<h3 class="text-[26px] md:text-[28px] font-medium text-text-main tracking-tight mb-2 max-w-xl leading-snug">
+            Nothing flagged today. Parliament last sat on 5 August 2026.
+          </h3>
+<!-- Subtext -->
+<p class="text-[15px] text-text-secondary max-w-lg mb-8 leading-relaxed">
+            All parliamentary items have been reviewed or no new statutory gazettes affect the firm’s active contract portfolio.
+          </p>
+<!-- Secondary Action Buttons -->
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded border border-border-hairline bg-[#F7F5F3] text-text-main hover:bg-[#EFECE9] transition-colors text-[13px] font-medium shadow-sm" href="#">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">folder_open</span>
+              Browse documents
+            </a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 text-text-secondary hover:text-text-main transition-colors text-[13px] font-medium" href="#">
+              View sitting Hansard
+              <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+    (function() {
+      const filterButtons = document.querySelectorAll('#status-filters .filter-pill');
+      const cards = document.querySelectorAll('.task-card');
+
+      let activeStatus = 'applied'; // Initially matches the approved state view
+
+      function applyFilters() {
+        cards.forEach(card => {
+          const cardStatus = card.getAttribute('data-status');
+          const statusMatch = (activeStatus === 'all') || (cardStatus === activeStatus);
+
+          if (statusMatch) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+            b.classList.add('bg-[#EDEAE7]', 'text-text-main');
+            const badge = b.querySelector('span:last-child');
+            if (badge) {
+              badge.className = 'px-1.5 py-0.2 rounded-full text-[11px] bg-white text-text-secondary font-medium';
+            }
+          });
+
+          btn.classList.remove('bg-[#EDEAE7]', 'text-text-main');
+          btn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+          const activeBadge = btn.querySelector('span:last-child');
+          if (activeBadge) {
+            activeBadge.className = 'px-1.5 py-0.2 rounded-full text-[11px] bg-white/20 text-white font-medium';
+          }
+
+          activeStatus = btn.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+
+      const markAllBtn = document.getElementById('mark-all-btn');
+      if (markAllBtn) {
+        markAllBtn.addEventListener('click', () => {
+          markAllBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-emerald-600">done</span> All marked read';
+          markAllBtn.disabled = true;
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>

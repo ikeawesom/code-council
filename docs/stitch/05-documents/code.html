@@ -1,0 +1,616 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#E8762D",
+            "primary-hover": "#C75F1C",
+            "on-primary": "#ffffff",
+            "brand-dark": "#141415",
+            "surface-dark": "#18181B",
+            "surface": "#ffffff",
+            "background": "#FCF9F8",
+            "surface-alt": "#F7F5F3",
+            "text-main": "#1A1A1A",
+            "text-secondary": "#5A5A5A",
+            "text-muted": "#8C8C8C",
+            "divider": "#E2E2E2",
+            "divider-subtle": "#EDEDED",
+            "badge-orange-bg": "#FFF4ED",
+            "badge-orange-text": "#D25F17",
+            "error": "#BA1A1A",
+            "error-bg": "#FFF5F5"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background text-text-main antialiased min-h-screen">
+<!-- Left Navigation Sidebar -->
+<aside class="fixed left-0 top-0 bottom-0 w-[240px] bg-brand-dark text-white z-50 flex flex-col justify-between border-r border-[#27272A] select-none">
+<div class="flex flex-col">
+<!-- Logo Header -->
+<div class="p-5 pb-4 border-b border-[#27272A]">
+<div class="flex items-center gap-2.5 mb-1.5">
+
+
+</div>
+<p class="text-[10.5px] uppercase tracking-[0.08em] text-[#909095] font-semibold leading-tight">Singapore Legal Advisory &amp; Hansard Monitor</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col py-3 px-2 space-y-1">
+<a class="flex items-center justify-between px-3 py-2 rounded text-[13.5px] font-medium text-[#A1A1AA] hover:bg-white/5 hover:text-white transition-all" data-path="tasks" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span class="">Tasks</span>
+</div>
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#2E2E33] text-[#D4D4D8]">7</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-[13.5px] font-medium text-[#A1A1AA] hover:bg-white/5 hover:text-white transition-all" data-path="inbox" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+<span class="">Inbox</span>
+</div>
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[11px] font-semibold bg-white/10 text-white">3</span>
+</a>
+<a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded text-[13.5px] font-semibold bg-white/10 text-white shadow-sm border-l-2 border-primary transition-all" data-path="documents" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">description</span>
+<span class="">Documents</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-[13.5px] font-medium text-[#A1A1AA] hover:bg-white/5 hover:text-white transition-all" data-path="parliament" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span class="">Parliament</span>
+</div>
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[9.5px] uppercase font-bold tracking-wider text-primary border border-primary/30">Gazette</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-[13.5px] font-medium text-[#A1A1AA] hover:bg-white/5 hover:text-white transition-all" data-path="settings" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+<span class="">Settings</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Live Jurisdiction Feed Footer -->
+<div class="p-3.5 border-t border-[#27272A] bg-black/20">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981] inline-block animate-pulse"></span>
+<span class="text-[10px] uppercase font-bold tracking-[0.08em] text-[#909095]">Live Jurisdiction Feed</span>
+</div>
+<p class="text-[11.5px] text-[#A1A1AA] leading-snug">SG Parliament Session 14 • Sitting No. 38</p>
+</div>
+</aside>
+<!-- Main App Shell -->
+<div class="pl-[240px]">
+<!-- Top Header -->
+<header class="fixed top-0 left-[240px] right-0 h-16 bg-surface border-b border-divider z-40 flex items-center justify-between px-8">
+<div class="flex items-center gap-6 flex-1 max-w-xl">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded border border-divider bg-surface-alt text-[13px] text-text-main placeholder:text-text-muted focus:outline-none focus:border-primary focus:bg-white transition-colors" placeholder="Search clauses, documents, or parliament items" type="text">
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center text-text-secondary text-[13px]">
+<span class="material-symbols-outlined text-text-muted text-[16px] mr-1.5">calendar_today</span>Wednesday, 5 August 2026
+        </div>
+<div class="h-4 w-px bg-divider hidden md:block"></div>
+<div class="flex items-center gap-2.5 cursor-pointer py-1 px-2 rounded hover:bg-surface-alt transition-colors">
+<div class="w-7 h-7 rounded-full bg-brand-dark flex items-center justify-center text-white text-[12px] font-semibold">
+            AT
+          </div>
+<div class="flex flex-col text-left">
+<span class="text-[13px] text-text-main font-semibold leading-tight">Amelia Tan</span>
+<span class="text-[11px] text-text-muted leading-tight">Senior Partner / Corporate</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[17px] ml-0.5">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="relative pt-16 bg-background min-h-screen px-8 py-8">
+<div class="flex flex-col w-full max-w-6xl mx-auto space-y-6 pb-16">
+<!-- Breadcrumbs & Context Track -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+<div class="flex items-center gap-2 text-[12px] tracking-[0.08em] uppercase font-semibold">
+<span class="text-primary">Lex Vault</span>
+<span class="text-divider">/</span>
+<span class="text-text-secondary">Contract Vault &amp; Jurisdiction Repository</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-alt text-text-secondary text-[11px] tracking-normal font-normal border border-divider ml-1">SG-LEGAL-DB · r4.2</span>
+</div>
+<!-- Live Sync Telemetry Badge -->
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded border border-divider bg-surface text-text-secondary text-[11.5px]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-ping"></span>
+<span class="font-normal text-text-main">Firm Folder Sync: <span class="text-text-secondary">Active via SharePoint • iManage Work 10.4</span></span>
+</div>
+</div>
+<!-- Header Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
+<div class="space-y-1">
+<h1 class="text-[34px] leading-tight text-text-main font-medium tracking-tight">
+              Documents
+            </h1>
+<p class="text-[16px] text-text-secondary leading-[1.7]">
+              9 master agreements &amp; templates under active surveillance across 4 departmental practice areas
+            </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded bg-surface text-text-main text-[13px] font-medium border border-divider hover:bg-surface-alt hover:border-gray-300 transition-all" type="button">
+<span class="material-symbols-outlined text-[17px] text-text-secondary">history</span>
+<span class="">Version History</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded bg-primary text-white text-[13px] font-medium hover:bg-primary-hover shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="">Add documents</span>
+</button>
+</div>
+</div>
+<!-- Search Filter & View Control Segment -->
+<div class="bg-surface p-2.5 rounded border border-divider shadow-[0_1px_3px_rgba(0,0,0,0.02)] flex flex-col lg:flex-row items-center justify-between gap-3">
+<!-- Search Clause Bar -->
+<div class="relative w-full lg:w-3/5">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded bg-surface-alt border border-divider-subtle text-[13.5px] text-text-main placeholder:text-text-muted focus:outline-none focus:bg-surface focus:border-primary transition-colors" id="docSearchInput" placeholder="Filter documents, clauses, or Hansard-cited statutory provisions..." type="text">
+</div>
+<!-- Segments & Filters -->
+<div class="flex items-center justify-between w-full lg:w-auto gap-3">
+<div class="flex items-center bg-surface-alt p-0.5 rounded border border-divider">
+<button class="px-3 py-1.5 rounded text-[12.5px] font-medium bg-white text-text-main shadow-xs border border-black/5 transition-all" id="tabGrouped" type="button">
+                Grouped by practice area
+              </button>
+<button class="px-3 py-1.5 rounded text-[12.5px] font-medium text-text-secondary hover:text-text-main transition-colors" id="tabAll" type="button">
+                All documents
+              </button>
+</div>
+<div class="h-5 w-px bg-divider hidden sm:block"></div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 text-text-secondary hover:text-text-main text-[13px] font-medium rounded hover:bg-surface-alt transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">filter_list</span>
+<span class="">Filter</span>
+</button>
+</div>
+</div>
+<!-- Repository Sections -->
+<div class="flex flex-col space-y-4" id="practiceAreaDeck">
+<!-- SECTION 1: REAL ESTATE -->
+<div class="bg-surface rounded border border-divider shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-200">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-5 py-3.5 bg-surface-alt/70 border-b border-divider cursor-pointer select-none group" onclick="toggleSection('sec-re')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-transform duration-200 text-[19px]" id="sec-re-icon">expand_more</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">holiday_village</span>
+<h2 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-text-main">Real Estate</h2>
+<span class="text-[11px] px-2 py-0.5 rounded bg-white text-text-secondary border border-divider ml-1 font-medium">3 documents</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] text-text-muted hidden md:inline">ID: RE-SG-CORP</span>
+<button class="p-1 rounded text-text-muted hover:text-text-main hover:bg-surface transition-colors" onclick="event.stopPropagation()" title="Folder configuration" type="button">
+<span class="material-symbols-outlined text-[17px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Section Items List -->
+<div class="flex flex-col divide-y divide-divider-subtle" id="sec-re-content">
+<!-- Doc 1 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Tenancy Agreement (Pte)</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-badge-orange-bg text-badge-orange-text">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        2 open tasks
+                      </span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      42 clauses • Version 3 • Synced 07:15 Today • Ref: TA-PTE-2026
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">Amelia Tan</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+<!-- Doc 2 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">contract</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Option To Purchase (Private Commercial)</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-badge-orange-bg text-badge-orange-text">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        1 open task
+                      </span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      28 clauses • Version 1 • Synced Yesterday • Ref: OTP-COMM-04
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">D. Wong</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+<!-- Doc 3 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">factory</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Option To Purchase (JTC Industrial)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-alt text-text-secondary border border-divider">Standardized</span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      31 clauses • Version 2 • Synced 3 Aug 2026 • Ref: OTP-JTC-IND
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">K. Lim</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+</div>
+</div>
+<!-- SECTION 2: MERGERS & ACQUISITIONS -->
+<div class="bg-surface rounded border border-divider shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-200">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-5 py-3.5 bg-surface-alt/70 border-b border-divider cursor-pointer select-none group" onclick="toggleSection('sec-ma')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-transform duration-200 text-[19px]" id="sec-ma-icon">expand_more</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">account_tree</span>
+<h2 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-text-main">Mergers &amp; Acquisitions</h2>
+<span class="text-[11px] px-2 py-0.5 rounded bg-white text-text-secondary border border-divider ml-1 font-medium">4 documents</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] text-text-muted hidden md:inline">ID: MA-CROSS-BORDER</span>
+<button class="p-1 rounded text-text-muted hover:text-text-main hover:bg-surface transition-colors" onclick="event.stopPropagation()" title="Folder configuration" type="button">
+<span class="material-symbols-outlined text-[17px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Section Items List -->
+<div class="flex flex-col divide-y divide-divider-subtle" id="sec-ma-content">
+<!-- Doc 1 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Joint Venture Agreement</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-badge-orange-bg text-badge-orange-text">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        1 open task
+                      </span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      67 clauses • Version 1 • Synced 1 Aug 2026 • Subject to Competition Act 2004 s 54 review
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">Amelia Tan</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+<!-- Doc 2 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">notes</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">JVA Term Sheet</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-alt text-text-secondary border border-divider">Archival Record</span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      19 clauses • Version 1 • Synced 28 Jul 2026 • Preliminary terms
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">Amelia Tan</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+<!-- Doc 3 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Project Folklore Term Sheet (Final)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-alt text-text-secondary border border-divider">Active Deal</span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      23 clauses • Version 1 • Synced 25 Jul 2026 • Project Folklore Acquisition
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">J. Fernandez</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+<!-- Doc 4 (Warning / Error State) -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 bg-error-bg/30 hover:bg-error-bg/50 transition-colors">
+<div class="flex items-start gap-3.5">
+<div class="w-8 h-8 rounded bg-[#FEE2E2]/60 border border-error/20 flex items-center justify-center shrink-0 text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main">VIMA 2.0 Model Term Sheet (Long Form)</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FEF3C7] text-[#92400E]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
+                        Unsupported File Type (.doc)
+                      </span>
+</div>
+<div class="mt-0.5 flex flex-wrap items-center gap-1.5 text-[13px] text-text-secondary">
+<span class="">This legacy binary <code class="px-1 py-0.2 rounded bg-surface-alt border border-divider text-[11.5px] font-mono text-text-main">.doc</code> file cannot be parsed for clause telemetry. Convert it to <strong class="text-text-main font-semibold">.docx</strong> or standard OpenXML format and re-upload.</span>
+<button class="text-primary font-medium hover:underline hover:text-primary-hover text-[13px] ml-1" type="button">Replace file</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0 shrink-0">
+<button class="px-2.5 py-1 text-[12px] font-medium rounded border border-divider bg-surface text-text-secondary hover:text-text-main hover:bg-surface-alt transition-colors" type="button">
+                    Dismiss
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: ENERGY & INFRASTRUCTURE -->
+<div class="bg-surface rounded border border-divider shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-200">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-5 py-3.5 bg-surface-alt/70 border-b border-divider cursor-pointer select-none group" onclick="toggleSection('sec-ei')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-transform duration-200 text-[19px]" id="sec-ei-icon">expand_more</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">bolt</span>
+<h2 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-text-main">Energy &amp; Infrastructure</h2>
+<span class="text-[11px] px-2 py-0.5 rounded bg-white text-text-secondary border border-divider ml-1 font-medium">2 documents</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] text-text-muted hidden md:inline">ID: EI-SG-BCA</span>
+<button class="p-1 rounded text-text-muted hover:text-text-main hover:bg-surface transition-colors" onclick="event.stopPropagation()" title="Folder configuration" type="button">
+<span class="material-symbols-outlined text-[17px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Section Items List -->
+<div class="flex flex-col divide-y divide-divider-subtle" id="sec-ei-content">
+<!-- Doc 1 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Agreement for Consultancy (BCA)</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-badge-orange-bg text-badge-orange-text">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        1 open task
+                      </span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      35 clauses • Version 1 • Synced 22 Jul 2026 • Building Control Act statutory compliance
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">Amelia Tan</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+<!-- Doc 2 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">construction</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">Agreement for Consultancy (Construction Project)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-alt text-text-secondary border border-divider">SOP Act Aligned</span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      39 clauses • Version 1 • Synced 18 Jul 2026 • Building and Construction Industry Security of Payment
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">S. Pillai</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+</div>
+</div>
+<!-- SECTION 4: GENERAL -->
+<div class="bg-surface rounded border border-divider shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-200">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-5 py-3.5 bg-surface-alt/70 border-b border-divider cursor-pointer select-none group" onclick="toggleSection('sec-gen')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-transform duration-200 text-[19px]" id="sec-gen-icon">expand_more</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">folder_special</span>
+<h2 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-text-main">General</h2>
+<span class="text-[11px] px-2 py-0.5 rounded bg-white text-text-secondary border border-divider ml-1 font-medium">1 document</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[12px] text-text-muted hidden md:inline">ID: GEN-FIRM-CORP</span>
+<button class="p-1 rounded text-text-muted hover:text-text-main hover:bg-surface transition-colors" onclick="event.stopPropagation()" title="Folder configuration" type="button">
+<span class="material-symbols-outlined text-[17px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Section Items List -->
+<div class="flex flex-col divide-y divide-divider-subtle" id="sec-gen-content">
+<!-- Doc 1 -->
+<a class="flex flex-col sm:flex-row sm:items-center justify-between px-5 py-3.5 hover:bg-[#FBF9F7] transition-colors group" href="#">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-8 h-8 rounded bg-surface-alt border border-divider flex items-center justify-center shrink-0 text-text-secondary group-hover:text-primary group-hover:border-primary/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="text-[14px] font-medium text-text-main group-hover:text-primary transition-colors">NDA template</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-alt text-text-main border border-divider">
+                        Recently modified
+                      </span>
+</div>
+<p class="text-[13px] text-text-secondary mt-0.5">
+                      12 clauses • Version 4 • Updated 4 Aug 2026 • Mutual non-disclosure standard
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2 sm:mt-0">
+<span class="text-[13px] text-text-secondary hidden md:block">Amelia Tan</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">chevron_right</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom Practice Area Creation Card -->
+<div class="rounded border border-dashed border-divider bg-surface hover:border-primary/50 transition-all p-6 shadow-xs group">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-5">
+<div class="space-y-1.5 max-w-2xl">
+<div class="flex items-center gap-2 text-text-main text-[16px] font-medium">
+<span class="material-symbols-outlined text-primary text-[21px] group-hover:scale-105 transition-transform duration-200">add_circle</span>
+<span class="">Add a practice area</span>
+</div>
+<p class="text-[14px] text-text-main leading-relaxed">
+                Create a folder in your firm repository inbox (SharePoint or iManage) and Lex Sentinel will pick it up automatically.
+              </p>
+<p class="text-[13px] text-text-secondary">
+                Document taxonomies, matter permissions, and statutory alerts inherit directly from your firm's established DMS directory hierarchy.
+              </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-3.5 py-2 rounded bg-surface text-text-main hover:bg-surface-alt border border-divider text-[13px] font-medium transition-colors" type="button">
+                Configure repository source
+              </button>
+<button class="px-3.5 py-2 rounded bg-brand-dark text-white hover:bg-black text-[13px] font-medium transition-colors" type="button">
+                Learn about folder sync
+              </button>
+</div>
+</div>
+</div>
+<!-- Footnote Metadata Record -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 border-t border-divider text-text-secondary text-[12px]">
+<div>
+<span class="">Repository Hash: SHA256-49A1F-SGP-HANSARD-LIVE</span>
+<span class="mx-2">•</span>
+<span class="">Encrypted at Rest (AES-256)</span>
+</div>
+<div>
+<span class="">Synchronized with Supreme Court Practice Directions &amp; SG Parliament Gazette</span>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+        function toggleSection(sectionId) {
+          const content = document.getElementById(sectionId + '-content');
+          const icon = document.getElementById(sectionId + '-icon');
+          if (!content || !icon) return;
+
+          if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.classList.remove('-rotate-90');
+          } else {
+            content.classList.add('hidden');
+            icon.classList.add('-rotate-90');
+          }
+        }
+
+        // Client-side search filter
+        const docSearchInput = document.getElementById('docSearchInput');
+        if (docSearchInput) {
+          docSearchInput.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase().trim();
+            const allRows = document.querySelectorAll('#practiceAreaDeck a, #practiceAreaDeck .bg-error-bg\\/30');
+
+            allRows.forEach(row => {
+              const text = row.textContent.toLowerCase();
+              if (text.includes(term)) {
+                row.style.display = '';
+              } else {
+                row.style.display = 'none';
+              }
+            });
+          });
+        }
+
+        // Segmented Pill active toggles
+        const tabGrouped = document.getElementById('tabGrouped');
+        const tabAll = document.getElementById('tabAll');
+        if (tabGrouped && tabAll) {
+          tabGrouped.addEventListener('click', () => {
+            tabGrouped.className = 'px-3 py-1.5 rounded text-[12.5px] font-medium bg-white text-text-main shadow-xs border border-black/5 transition-all';
+            tabAll.className = 'px-3 py-1.5 rounded text-[12.5px] font-medium text-text-secondary hover:text-text-main transition-colors';
+          });
+          tabAll.addEventListener('click', () => {
+            tabAll.className = 'px-3 py-1.5 rounded text-[12.5px] font-medium bg-white text-text-main shadow-xs border border-black/5 transition-all';
+            tabGrouped.className = 'px-3 py-1.5 rounded text-[12.5px] font-medium text-text-secondary hover:text-text-main transition-colors';
+          });
+        }
+      </script>
+</main>
+</div>
+
+
+</body></html>

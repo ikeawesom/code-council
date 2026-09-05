@@ -1,0 +1,7 @@
+# Root config so `ruff check .` from the repo root lints scripts/ with the same
+# rules backend/pyproject.toml applies to backend/. Keep the two in sync.
+line-length = 100
+target-version = "py311"
+
+[lint]
+select = ["E", "F", "I", "UP", "B"]

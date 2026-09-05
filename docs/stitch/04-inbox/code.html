@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#E8762D",
+          "primary-hover": "#C75F1C",
+          "on-primary": "#ffffff",
+          "accent-orange": "#E8762D",
+          "accent-hover": "#C75F1C",
+          "brand-dark": "#0B1528",
+          "brand-dark-card": "#13213C",
+          "text-primary": "#1A1A1A",
+          "text-secondary": "#5A5A5A",
+          "divider-hairline": "#E2E2E2",
+          "surface-card": "#FFFFFF",
+          "bg-canvas": "#F7F5F3",
+          "surface-container": "#F0EDED",
+          "surface-container-low": "#F8F6F4"
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        }
+      }
+    }
+  };
+</script></head><body class="bg-bg-canvas font-sans text-text-primary antialiased min-h-screen"><aside class="fixed left-0 top-0 bottom-0 w-[240px] bg-brand-dark text-white z-50 flex flex-col justify-between border-r border-[#1e2c47] select-none"><div class="flex flex-col"><div class="p-4 pb-3.5 border-b border-white/10"><div class="flex items-center gap-2 mb-1.5"></div><p class="text-[10px] tracking-[0.08em] uppercase font-semibold text-white/50 leading-tight">Singapore Legal Advisory &amp; Hansard Monitor</p></div><nav class="flex flex-col py-3 px-2 space-y-1"><a class="flex items-center justify-between px-3 py-2 rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="tasks" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">task_alt</span><span class="">Tasks</span></div><span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[11px] font-semibold bg-white/10 text-white/80">7</span></a><a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded-lg text-white font-semibold transition-all bg-[#172642] border-l-2 border-accent-orange shadow-sm text-[13px]" data-path="inbox" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px] text-accent-orange">inbox</span><span class="">Inbox</span></div><span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-accent-orange text-white">3</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="documents" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">description</span><span class="">Documents</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="parliament" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">account_balance</span><span class="">Parliament</span></div><span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider text-accent-orange/90 bg-accent-orange/10 border border-accent-orange/20">Gazette</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition-colors text-[13px] font-medium" data-path="settings" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">settings</span><span class="">Settings</span></div></a></nav></div><div class="p-3.5 border-t border-white/10 bg-[#070e1c]"><div class="flex items-center gap-1.5 text-white/60 mb-1"><span class="w-2 h-2 rounded-full bg-[#10b981] inline-block animate-pulse"></span><span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-white/70">Live Jurisdiction Feed</span></div><p class="text-[12px] text-white/60 leading-snug font-normal">SG Parliament Session 14 • Sitting No. 38</p></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface-card border-b border-divider-hairline z-40 flex items-center justify-between px-8"><div class="flex items-center gap-4 flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[18px]">search</span><input class="w-full h-[38px] pl-9 pr-3 rounded bg-bg-canvas border border-divider-hairline text-[13px] text-text-primary placeholder:text-text-secondary/70 focus:outline-none focus:border-accent-orange focus:bg-surface-card transition-colors" placeholder="Search clauses, documents, or parliament items" type="text"></div></div><div class="flex items-center gap-6"><div class="hidden md:flex items-center text-text-secondary text-[13px]"><span class="material-symbols-outlined text-text-secondary text-[16px] mr-1.5">calendar_today</span>Wednesday, 5 August 2026</div><div class="h-5 w-px bg-divider-hairline hidden md:block"></div><div class="flex items-center gap-2.5 cursor-pointer py-1 px-1.5 rounded hover:bg-bg-canvas transition-colors"><div class="w-8 h-8 rounded-full bg-brand-dark flex items-center justify-center text-white"><span class="material-symbols-outlined text-[18px]">person</span></div><div class="flex flex-col text-left"><span class="text-[13px] text-text-primary font-semibold leading-tight">Amelia Tan</span><span class="text-[11px] text-text-secondary leading-tight">Senior Partner / Corporate</span></div><span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-bg-canvas min-h-screen px-8 py-8"><div class="flex flex-col w-full max-w-[1100px] mx-auto pb-16">
+<!-- Page Header Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[12px] uppercase tracking-[0.08em] font-semibold text-text-secondary">Notification Dispatch</span>
+<span class="w-1 h-1 rounded-full bg-divider-hairline"></span>
+<span class="text-[12px] uppercase tracking-[0.08em] font-semibold text-accent-orange">Live Audit Stream</span>
+</div>
+<div class="flex items-baseline gap-3">
+<h1 class="text-[34px] leading-tight font-medium text-text-primary tracking-tight">Inbox</h1>
+<span class="text-[15px] text-text-secondary font-normal" id="unread-counter-badge">
+          3 unread updates
+        </span>
+</div>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-3 self-start md:self-auto">
+<button class="flex items-center gap-1.5 px-3.5 py-2 bg-surface-card hover:bg-surface-container-low text-text-primary border border-divider-hairline transition-colors rounded text-[13px] font-medium shadow-sm" id="mark-all-read-btn">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">done_all</span>
+<span class="">Mark all as read</span>
+</button>
+<div class="hidden sm:flex items-center text-text-secondary text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1.5 bg-surface-card border border-divider-hairline rounded">
+<span class="">FILTERS: ALL JURISDICTIONS</span>
+</div>
+</div>
+</div>
+<!-- Primary Notifications Container -->
+<div class="bg-surface-card border border-divider-hairline rounded shadow-sm overflow-hidden flex flex-col mb-8" id="inbox-card-container">
+<!-- Section 1: TODAY -->
+<div class="section-group">
+<div class="bg-[#FAF9F7] px-6 py-2.5 flex items-center justify-between border-b border-divider-hairline">
+<div class="flex items-center gap-2">
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-primary font-bold">Today</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold tracking-wider bg-accent-orange/10 text-accent-orange uppercase">
+            3 PENDING
+          </span>
+</div>
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-secondary font-medium">05 Aug 2026</span>
+</div>
+<!-- Item 1: Daniel Ong -->
+<div class="notification-item unread-item relative flex items-start justify-between p-5 bg-[#FCFAF8] hover:bg-[#F7F4F0] border-b border-divider-hairline transition-colors group">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-4">
+<!-- Unread Status Indicator -->
+<div class="pt-2 flex-shrink-0">
+<span class="status-dot block w-2 h-2 rounded-full bg-accent-orange"></span>
+</div>
+<!-- Colleague Avatar -->
+<div class="w-9 h-9 rounded-full bg-[#EAE7E4] text-text-primary flex-shrink-0 flex items-center justify-center text-[12px] font-semibold">
+            DO
+          </div>
+<!-- Content Body -->
+<div class="flex flex-col min-w-0">
+<p class="text-[15px] leading-snug text-text-primary font-normal">
+<span class="font-semibold text-text-primary">Daniel Ong</span> modified 
+              <span class="font-semibold text-text-primary">Tenancy Agreement (Pte)</span> — <span class="text-[12px] font-mono text-accent-orange bg-accent-orange/10 px-1.5 py-0.5 rounded">clause 7.2</span> — at 09:14 today.
+            </p>
+<p class="text-[13px] text-text-secondary mt-1 truncate">
+              Subletting now requires written landlord consent within 14 days.
+            </p>
+</div>
+</div>
+<!-- Row Action -->
+<div class="flex items-center self-center flex-shrink-0 ml-4">
+<a class="inline-flex items-center gap-1 text-text-primary text-[13px] font-medium hover:text-accent-orange transition-colors group-hover:translate-x-0.5 transform duration-150" href="#">
+<span class="">View changes</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 2: Priya Nair -->
+<div class="notification-item unread-item relative flex items-start justify-between p-5 bg-[#FCFAF8] hover:bg-[#F7F4F0] border-b border-divider-hairline transition-colors group">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-4">
+<div class="pt-2 flex-shrink-0">
+<span class="status-dot block w-2 h-2 rounded-full bg-accent-orange"></span>
+</div>
+<div class="w-9 h-9 rounded-full bg-[#EAE7E4] text-text-primary flex-shrink-0 flex items-center justify-center text-[12px] font-semibold">
+            PN
+          </div>
+<div class="flex flex-col min-w-0">
+<p class="text-[15px] leading-snug text-text-primary font-normal">
+<span class="font-semibold text-text-primary">Priya Nair</span> approved an amendment to 
+              <span class="font-semibold text-text-primary">Option To Purchase (JTC Industrial)</span> at 08:47 today.
+            </p>
+<p class="text-[13px] text-text-secondary mt-1 truncate">
+              Statutory alignment with updated JTC industrial leasehold covenants.
+            </p>
+</div>
+</div>
+<div class="flex items-center self-center flex-shrink-0 ml-4">
+<a class="inline-flex items-center gap-1 text-text-primary text-[13px] font-medium hover:text-accent-orange transition-colors group-hover:translate-x-0.5 transform duration-150" href="#">
+<span class="">View changes</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 3: Lex Sentinel System Alert -->
+<div class="notification-item unread-item relative flex items-start justify-between p-5 bg-[#FCFAF8] hover:bg-[#F7F4F0] border-b border-divider-hairline transition-colors group">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-4">
+<div class="pt-2 flex-shrink-0">
+<span class="status-dot block w-2 h-2 rounded-full bg-accent-orange"></span>
+</div>
+<!-- Seal Icon Avatar -->
+<div class="w-9 h-9 rounded-full bg-brand-dark text-white flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[19px] text-accent-orange">shield_with_house</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<p class="text-[15px] leading-snug text-text-primary font-normal">
+<span class="font-semibold text-text-primary">Lex Sentinel</span> flagged 
+                <span class="font-semibold text-text-primary">7 new items</span> from Parliament at 07:04 today.
+              </p>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#FFDAD6] text-[#93000A]">
+                3 HIGH IMPACT
+              </span>
+</div>
+<p class="text-[13px] text-text-secondary mt-1 truncate">
+              Morning Hansard scan: 3 High impact, 3 Cautionary, 1 Procedural.
+            </p>
+</div>
+</div>
+<div class="flex items-center self-center flex-shrink-0 ml-4">
+<a class="inline-flex items-center gap-1 text-accent-orange text-[13px] font-semibold hover:text-accent-hover transition-colors group-hover:translate-x-0.5 transform duration-150" href="#">
+<span class="">View tasks</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Section 2: YESTERDAY -->
+<div class="section-group">
+<div class="bg-[#FAF9F7] px-6 py-2.5 flex items-center justify-between border-b border-divider-hairline">
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-primary font-bold">Yesterday</span>
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-secondary font-medium">04 Aug 2026</span>
+</div>
+<!-- Item 4: Marcus Lee -->
+<div class="notification-item flex items-start justify-between p-5 bg-surface-card hover:bg-bg-canvas border-b border-divider-hairline transition-colors group">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-4">
+<div class="pt-2 flex-shrink-0">
+<span class="block w-2 h-2 rounded-full opacity-0"></span>
+</div>
+<div class="w-9 h-9 rounded-full bg-[#EAE7E4] text-text-secondary flex-shrink-0 flex items-center justify-center text-[12px] font-semibold">
+            ML
+          </div>
+<div class="flex flex-col min-w-0">
+<p class="text-[15px] leading-snug text-text-primary font-normal">
+<span class="font-semibold text-text-primary">Marcus Lee</span> dismissed a suggested amendment to 
+              <span class="font-semibold text-text-primary">NDA template</span> yesterday at 16:30.
+            </p>
+<p class="text-[13px] text-text-secondary mt-1 truncate">
+              Standard non-disclosure terms maintained per partner directive.
+            </p>
+</div>
+</div>
+<div class="flex items-center self-center flex-shrink-0 ml-4">
+<a class="inline-flex items-center gap-1 text-text-secondary text-[13px] font-medium hover:text-text-primary transition-colors group-hover:translate-x-0.5 transform duration-150" href="#">
+<span class="">View changes</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 5: Daniel Ong -->
+<div class="notification-item flex items-start justify-between p-5 bg-surface-card hover:bg-bg-canvas border-b border-divider-hairline transition-colors group">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-4">
+<div class="pt-2 flex-shrink-0">
+<span class="block w-2 h-2 rounded-full opacity-0"></span>
+</div>
+<div class="w-9 h-9 rounded-full bg-[#EAE7E4] text-text-secondary flex-shrink-0 flex items-center justify-center text-[12px] font-semibold">
+            DO
+          </div>
+<div class="flex flex-col min-w-0">
+<p class="text-[15px] leading-snug text-text-primary font-normal">
+<span class="font-semibold text-text-primary">Daniel Ong</span> assigned you a task in 
+              <span class="font-semibold text-text-primary">Mergers &amp; Acquisitions</span> yesterday at 14:02.
+            </p>
+<p class="text-[13px] text-text-secondary mt-1 truncate">
+              Foreign investment review thresholds completion conditions.
+            </p>
+</div>
+</div>
+<div class="flex items-center self-center flex-shrink-0 ml-4">
+<a class="inline-flex items-center gap-1 text-text-secondary text-[13px] font-medium hover:text-text-primary transition-colors group-hover:translate-x-0.5 transform duration-150" href="#">
+<span class="">View task</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Section 3: EARLIER THIS WEEK -->
+<div class="section-group">
+<div class="bg-[#FAF9F7] px-6 py-2.5 flex items-center justify-between border-b border-divider-hairline">
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-primary font-bold">Earlier this week</span>
+<span class="text-[12px] uppercase tracking-[0.08em] text-text-secondary font-medium">03 Aug 2026</span>
+</div>
+<!-- Item 6: Priya Nair -->
+<div class="notification-item flex items-start justify-between p-5 bg-surface-card hover:bg-bg-canvas transition-colors group">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-4">
+<div class="pt-2 flex-shrink-0">
+<span class="block w-2 h-2 rounded-full opacity-0"></span>
+</div>
+<div class="w-9 h-9 rounded-full bg-[#EAE7E4] text-text-secondary flex-shrink-0 flex items-center justify-center text-[12px] font-semibold">
+            PN
+          </div>
+<div class="flex flex-col min-w-0">
+<p class="text-[15px] leading-snug text-text-primary font-normal">
+<span class="font-semibold text-text-primary">Priya Nair</span> added 
+              <span class="font-semibold text-text-primary">Joint Venture Agreement</span> to the vault on Monday.
+            </p>
+<p class="text-[13px] text-text-secondary mt-1 truncate">
+              Initial execution version uploaded with cross-border escrow provisions.
+            </p>
+</div>
+</div>
+<div class="flex items-center self-center flex-shrink-0 ml-4">
+<a class="inline-flex items-center gap-1 text-text-secondary text-[13px] font-medium hover:text-text-primary transition-colors group-hover:translate-x-0.5 transform duration-150" href="#">
+<span class="">View document</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Caught Up Frame / State Confirmation Card -->
+<div class="bg-surface-card rounded border border-divider-hairline p-10 text-center shadow-sm relative overflow-hidden flex flex-col items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-bg-canvas border border-divider-hairline flex items-center justify-center mb-4 text-accent-orange">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+</div>
+<h2 class="text-[22px] leading-[30px] tracking-[-0.015em] text-text-primary mb-2 font-medium">
+      You are all caught up.
+    </h2>
+<p class="text-[15px] text-text-secondary max-w-lg mb-6 leading-relaxed">
+      No unread colleague activity or pending system alerts across your active matter portfolio.
+    </p>
+<div class="flex items-center gap-3">
+<a class="px-5 py-2.5 bg-brand-dark hover:bg-brand-dark/90 text-white transition-colors rounded text-[13px] font-medium flex items-center gap-2 shadow-sm" href="#">
+<span class="">Go to Tasks</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="px-5 py-2.5 bg-bg-canvas hover:bg-[#eeeae6] text-text-primary border border-divider-hairline transition-colors rounded text-[13px] font-medium" href="#">
+        View Gazette Digest
+      </a>
+</div>
+<!-- Subtle Clean Watermark -->
+<div class="absolute -right-8 -bottom-10 opacity-[0.03] pointer-events-none select-none text-text-primary">
+<span class="material-symbols-outlined text-[150px]">gavel</span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const markReadBtn = document.getElementById('mark-all-read-btn');
+    const badgeText = document.getElementById('unread-counter-badge');
+    const unreadItems = document.querySelectorAll('.unread-item');
+
+    if (markReadBtn) {
+      markReadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        unreadItems.forEach(function(item) {
+          item.classList.remove('bg-[#FCFAF8]');
+          item.classList.add('bg-surface-card');
+          
+          const dot = item.querySelector('.status-dot');
+          if (dot) {
+            dot.classList.add('opacity-0');
+            dot.classList.remove('bg-accent-orange');
+          }
+        });
+
+        if (badgeText) {
+          badgeText.textContent = '0 unread updates';
+        }
+
+        markReadBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-[#10b981]">check</span><span>All items read</span>';
+        markReadBtn.classList.add('opacity-75', 'pointer-events-none');
+      });
+    }
+  })();
+</script></main></div>
+
+</body></html>

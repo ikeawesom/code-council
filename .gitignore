@@ -16,8 +16,22 @@ out/
 
 # runtime data
 data/app.db
+data/app.db-journal
 data/llm_cache/*
 !data/llm_cache/.gitkeep
+
+# generated vault content - DERIVED FROM CLIENT DOCUMENTS, so it inherits the
+# same confidentiality as data/inbox/ (standing rule 1). The vault is rebuilt by
+# `python scripts/ingest.py`; only the structure and the hand-written index are
+# tracked. Remove these lines only if the repo is known to be private AND the
+# firm has agreed their contract text may live in git history.
+vault/documents/*
+!vault/documents/.gitkeep
+vault/concepts/*
+!vault/concepts/.gitkeep
+vault/parliament/*
+!vault/parliament/.gitkeep
+vault/graph.json
 
 # source documents (client confidential - never commit)
 data/inbox/*

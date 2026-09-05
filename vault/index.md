@@ -14,3 +14,240 @@ in Obsidian to browse the graph.
 - `parliament/` - scraped Hansard items, one file per item
 
 Populated by `python scripts/ingest.py`.
+
+<!-- BEGIN GENERATED: documents and concepts (do not edit below) -->
+
+## Documents
+- [[01-tenancy-agreement-pte]] - Tenancy Agreement (Pte) (real-estate)
+- [[04-option-to-purchase-private-commercial]] - Option To Purchase (Private Commercial) (real-estate)
+- [[06-option-to-purchase-jtc-industrial]] - Option To Purchase (JTC Industrial) (real-estate)
+- [[agreement-for-consultancy-bca]] - Agreement for Consultancy (BCA) (energy-and-infrastructure)
+- [[agreement-for-consultancy-construction-project]] - Agreement for Consultancy (Construction Project) (energy-and-infrastructure)
+- [[joint-venture-agreement]] - Joint Venture Agreement (mergers-and-acquisition)
+- [[jva-term-sheet]] - JVA Term Sheet (mergers-and-acquisition)
+- [[nda-template]] - NDA template (general)
+- [[project-folklore-term-sheet-final]] - Project Folklore Term Sheet (Final) (mergers-and-acquisition)
+- [[vima-2-0-model-term-sheet-long-form]] - VIMA 2.0 Model Term Sheet (Long Form) (mergers-and-acquisition) (parse error: Legacy binary .doc format is not supported - convert to .docx (e.g. via Word or LibreOffice 'Save As') and re-ingest.)
+
+## Concepts
+- [[acceptance-of-offer]] - Acceptance Of Offer
+- [[acknowledgement]] - Acknowledgement
+- [[additional-services]] - Additional Services
+- [[advance-payment]] - Advance Payment
+- [[agency]] - Agency
+- [[agency-authority]] - Agency Authority
+- [[agreement-for-lease]] - Agreement For Lease
+- [[annulment]] - Annulment
+- [[annulment-of-purchase]] - Annulment Of Purchase
+- [[anti-corruption]] - Anti-corruption
+- [[anti-money-laundering]] - Anti-money Laundering
+- [[appointment]] - Appointment
+- [[appointment-of-solicitors]] - Appointment Of Solicitors
+- [[apportionment-of-forfeited-sum]] - Apportionment Of Forfeited Sum
+- [[arbitration]] - Arbitration
+- [[as-is-where-is]] - As Is Where Is
+- [[assignment]] - Assignment
+- [[attestation-by-witness]] - Attestation By Witness
+- [[authorised-occupants]] - Authorised Occupants
+- [[authority-to-solicitors]] - Authority To Solicitors
+- [[binding-effect]] - Binding Effect
+- [[board-composition]] - Board Composition
+- [[breach-of-covenant]] - Breach Of Covenant
+- [[capital-commitment]] - Capital Commitment
+- [[capital-contribution]] - Capital Contribution
+- [[change-of-use]] - Change Of Use
+- [[change-of-use-approval]] - Change Of Use Approval
+- [[charges-and-notices-affecting-property]] - Charges And Notices Affecting Property
+- [[collaboration]] - Collaboration
+- [[commencement]] - Commencement
+- [[completion]] - Completion
+- [[completion-date]] - Completion Date
+- [[compliance-obligation]] - Compliance Obligation
+- [[compliance-with-authority-conditions]] - Compliance With Authority Conditions
+- [[compulsory-acquisition]] - Compulsory Acquisition
+- [[condition-of-property]] - Condition Of Property
+- [[condition-precedent]] - Condition Precedent
+- [[conditions-precedent]] - Conditions Precedent
+- [[confidentiality]] - Confidentiality
+- [[conflict-of-interest]] - Conflict Of Interest
+- [[conflict-of-terms]] - Conflict Of Terms
+- [[consortium]] - Consortium
+- [[conveyancing-rules]] - Conveyancing Rules
+- [[corporate-governance]] - Corporate Governance
+- [[corporate-structure]] - Corporate Structure
+- [[costs]] - Costs
+- [[costs-and-expenses]] - Costs And Expenses
+- [[damages]] - Damages
+- [[data-protection]] - Data Protection
+- [[deadlock]] - Deadlock
+- [[declaration]] - Declaration
+- [[deduction-of-title]] - Deduction Of Title
+- [[deed-of-assignment]] - Deed Of Assignment
+- [[deemed-notice]] - Deemed Notice
+- [[deemed-repudiation]] - Deemed Repudiation
+- [[deemed-satisfaction]] - Deemed Satisfaction
+- [[deemed-satisfactory-replies]] - Deemed Satisfactory Replies
+- [[default]] - Default
+- [[defects-liability]] - Defects Liability
+- [[definitions]] - Definitions
+- [[delay]] - Delay
+- [[demise-of-premises]] - Demise Of Premises
+- [[discharge-of-obligations]] - Discharge Of Obligations
+- [[disclaimer]] - Disclaimer
+- [[disclosure-required-by-law]] - Disclosure Required By Law
+- [[dispute-resolution]] - Dispute Resolution
+- [[distribution-rights]] - Distribution Rights
+- [[distributions]] - Distributions
+- [[due-diligence-checks]] - Due Diligence Checks
+- [[early-notice]] - Early Notice
+- [[employment-standards]] - Employment Standards
+- [[encumbrances]] - Encumbrances
+- [[estate-agency-commission]] - Estate Agency Commission
+- [[estate-agent-obligations]] - Estate Agent Obligations
+- [[exclusion-of-objections-and-requisitions]] - Exclusion Of Objections And Requisitions
+- [[exclusion-of-warranties]] - Exclusion Of Warranties
+- [[exclusivity]] - Exclusivity
+- [[execution]] - Execution
+- [[execution-and-date]] - Execution And Date
+- [[execution-and-signature]] - Execution And Signature
+- [[existing-tenancy]] - Existing Tenancy
+- [[extension-of-time]] - Extension Of Time
+- [[fee-adjustment]] - Fee Adjustment
+- [[forfeiture]] - Forfeiture
+- [[forfeiture-of-deposit]] - Forfeiture Of Deposit
+- [[forfeiture-sharing]] - Forfeiture Sharing
+- [[furniture-fixtures-and-fittings]] - Furniture, Fixtures And Fittings
+- [[goods-and-services-tax]] - Goods And Services Tax
+- [[governing-law]] - Governing Law
+- [[government-authority-replies]] - Government Authority Replies
+- [[government-requisitions]] - Government Requisitions
+- [[identity-verification]] - Identity Verification
+- [[immigration-act-1959]] - Immigration Act 1959
+- [[immigration-compliance]] - Immigration Compliance
+- [[incorporation-by-reference]] - Incorporation By Reference
+- [[indemnity]] - Indemnity
+- [[information-provision]] - Information Provision
+- [[insolvency]] - Insolvency
+- [[insurance]] - Insurance
+- [[intellectual-property]] - Intellectual Property
+- [[interest]] - Interest
+- [[interpretation]] - Interpretation
+- [[inventory]] - Inventory
+- [[inventory-and-furnishing]] - Inventory And Furnishing
+- [[irrevocable-authority-to-deduct]] - Irrevocable Authority To Deduct
+- [[irrevocable-letter-of-authority]] - Irrevocable Letter Of Authority
+- [[joint-and-several-liability]] - Joint And Several Liability
+- [[joint-venture]] - Joint Venture
+- [[jtc-approval]] - Jtc Approval
+- [[jtc-consent]] - Jtc Consent
+- [[jurisdiction]] - Jurisdiction
+- [[land-transport-authority]] - Land Transport Authority
+- [[landlord]] - Landlord
+- [[landlord-covenants]] - Landlord Covenants
+- [[landlord-s-consent]] - Landlord's Consent
+- [[law-society-conditions-of-sale-2020]] - Law Society Conditions Of Sale 2020
+- [[liability]] - Liability
+- [[licence]] - Licence
+- [[limitation-of-liability]] - Limitation Of Liability
+- [[limitation-on-requisitions]] - Limitation On Requisitions
+- [[litigation]] - Litigation
+- [[lock-up]] - Lock-up
+- [[long-term-pass]] - Long-term Pass
+- [[mediation]] - Mediation
+- [[mutual-release]] - Mutual Release
+- [[no-claim-for-damages-or-costs]] - No Claim For Damages Or Costs
+- [[no-interest-on-refund]] - No Interest On Refund
+- [[no-requisitions]] - No Requisitions
+- [[non-competition]] - Non-competition
+- [[non-merger]] - Non-merger
+- [[notice-period]] - Notice Period
+- [[notices]] - Notices
+- [[notification]] - Notification
+- [[obligation-to-complete]] - Obligation To Complete
+- [[occupancy-restrictions]] - Occupancy Restrictions
+- [[option-to-purchase]] - Option To Purchase
+- [[order-of-precedence]] - Order Of Precedence
+- [[parties]] - Parties
+- [[payment-method]] - Payment Method
+- [[payment-of-balance-purchase-price]] - Payment Of Balance Purchase Price
+- [[payment-on-completion]] - Payment On Completion
+- [[payment-terms]] - Payment Terms
+- [[permitted-use]] - Permitted Use
+- [[personal-data]] - Personal Data
+- [[personal-data-protection-act-2012]] - Personal Data Protection Act 2012
+- [[place-of-completion]] - Place Of Completion
+- [[pre-emption-rights]] - Pre-emption Rights
+- [[priority-of-documents]] - Priority Of Documents
+- [[professional-advice-disclaimer]] - Professional Advice Disclaimer
+- [[professional-obligations]] - Professional Obligations
+- [[profit-sharing]] - Profit Sharing
+- [[programme]] - Programme
+- [[programme-and-milestones]] - Programme And Milestones
+- [[progressive-wage-mark]] - Progressive Wage Mark
+- [[property-identification]] - Property Identification
+- [[provisional-sum]] - Provisional Sum
+- [[purchase-price]] - Purchase Price
+- [[purchaser-obligations]] - Purchaser Obligations
+- [[recitals]] - Recitals
+- [[record-keeping]] - Record Keeping
+- [[record-retention]] - Record Retention
+- [[rectification-at-vendor-s-expense]] - Rectification At Vendor's Expense
+- [[refund-of-deposit]] - Refund Of Deposit
+- [[refund-of-monies]] - Refund Of Monies
+- [[regulatory-compliance]] - Regulatory Compliance
+- [[regulatory-consent]] - Regulatory Consent
+- [[related-party-transactions]] - Related Party Transactions
+- [[relationship-of-parties]] - Relationship Of Parties
+- [[release-of-claims]] - Release Of Claims
+- [[remuneration]] - Remuneration
+- [[renewal]] - Renewal
+- [[rent]] - Rent
+- [[repair-and-maintenance]] - Repair And Maintenance
+- [[requisitions]] - Requisitions
+- [[rescission]] - Rescission
+- [[reserved-matters]] - Reserved Matters
+- [[restriction-on-requisitions]] - Restriction On Requisitions
+- [[reversion]] - Reversion
+- [[right-to-terminate]] - Right To Terminate
+- [[scope-of-services]] - Scope Of Services
+- [[security-deposit]] - Security Deposit
+- [[share-transfer]] - Share Transfer
+- [[shareholding]] - Shareholding
+- [[solicitors-authority]] - Solicitors' Authority
+- [[solicitors-details]] - Solicitors' Details
+- [[stages-of-services]] - Stages Of Services
+- [[standard-of-care]] - Standard Of Care
+- [[statutory-compliance]] - Statutory Compliance
+- [[statutory-notices]] - Statutory Notices
+- [[sub-contracting]] - Sub-contracting
+- [[subcontracting]] - Subcontracting
+- [[successors-and-assigns]] - Successors And Assigns
+- [[survival-of-terms]] - Survival Of Terms
+- [[tax-invoice]] - Tax Invoice
+- [[tax-liability]] - Tax Liability
+- [[taxes]] - Taxes
+- [[taxes-and-outgoings]] - Taxes And Outgoings
+- [[tenancy-agreement]] - Tenancy Agreement
+- [[tenant]] - Tenant
+- [[tenant-covenants]] - Tenant Covenants
+- [[term]] - Term
+- [[term-of-lease]] - Term Of Lease
+- [[termination]] - Termination
+- [[terms-of-sale]] - Terms Of Sale
+- [[third-party-rights]] - Third Party Rights
+- [[time-for-performance]] - Time For Performance
+- [[title]] - Title
+- [[vacant-possession]] - Vacant Possession
+- [[valuation]] - Valuation
+- [[variation]] - Variation
+- [[vendor-obligation-to-rectify]] - Vendor Obligation To Rectify
+- [[vendor-obligations]] - Vendor Obligations
+- [[vendor-s-expense]] - Vendor's Expense
+- [[waiver]] - Waiver
+- [[warranties]] - Warranties
+- [[withholding-tax]] - Withholding Tax
+- [[witnessing]] - Witnessing
+- [[women-s-charter-1961]] - Women's Charter 1961
+- [[work-pass-verification]] - Work Pass Verification
+
+<!-- END GENERATED -->
