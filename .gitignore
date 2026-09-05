@@ -1,0 +1,28 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# node
+node_modules/
+.next/
+out/
+
+# env
+.env
+.env.local
+
+# runtime data
+data/app.db
+data/llm_cache/*
+!data/llm_cache/.gitkeep
+
+# source documents (client confidential - never commit)
+data/inbox/*
+!data/inbox/.gitkeep
+
+# os
+.DS_Store
+Thumbs.db
