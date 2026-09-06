@@ -35,6 +35,19 @@ _amended artifact_ is where the risk actually lives.
 
 Code Council is built to close exactly that span.
 
+## Demo Screenshots
+
+![dashboard-page](./docs/images/tasks-page.png)
+_Image 1: Main dashboard page on landing._
+
+![affected-documents-page-1](./docs/images/document-ammendments-1.png)
+_Image 2a: Documents which have been affected._
+
+![affected-documents-page-1](./docs/images/document-ammendments-2.png)
+_Image 2b: Highlights the detailed changes within each clause and why they were flagged._
+
+_NOTE: More demo screenshots can be found [here](./docs/images)._
+
 ## How it answers the brief
 
 The brief asks for three things. Each maps to a mechanism, not a promise:
