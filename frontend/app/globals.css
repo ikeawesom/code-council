@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+/* Canonical design tokens - docs/UI_PLAN.md section 3.
+   Tailwind v4 is CSS-config-first: this @theme block IS the config. */
+@theme {
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #e8762d;
+  --color-primary-hover: #c75f1c;
+  --color-primary-subtle: #fdeee5;
+
+  --color-sidebar: #141c24;
+  --color-sidebar-border: #222e3a;
+
+  --color-background: #f7f5f3;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f4f2f0;
+
+  --color-text-main: #1a1a1a;
+  --color-text-secondary: #5a5a5a;
+  --color-text-muted: #8c8c8c;
+
+  --color-border-hairline: #e2e2e2;
+
+  --color-severity-high: #b83227;
+  --color-severity-medium: #c75f1c;
+  --color-severity-low: #78716c;
+
+  --color-status-new: #5a5a5a;
+  --color-status-progress: #2563eb;
+  --color-status-approved: #16a34a;
+  --color-status-dismissed: #78716c;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main antialiased;
+  }
+}

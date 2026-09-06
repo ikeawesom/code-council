@@ -15,6 +15,6 @@ browser tab on the vault folder in Obsidian.
 | 2:30 | **Nothing leaves the firm.** The LLM sits behind a provider interface; swap `claude_cli` for the on-prem local model with one config line. Close on that. |
 
 ## Hard requirements for demo day
-- `LEX_OFFLINE=1` produces a full run with the network unplugged.
+- `CC_OFFLINE=1` produces a full run with the network unplugged.
 - The planted fixture item is visibly labelled as a demo fixture.
 - The approve action visibly changes a file on disk - show the diff if there is time.

@@ -28,7 +28,7 @@ DEFAULT_SITTING_DATE = "2026-09-02"
 
 # (name, role, initials, email local-part) - Singaporean-plausible demo lawyers.
 DEMO_USERS: tuple[tuple[str, str, str, str], ...] = (
-    ("Wei Ling Tan", "Partner", "WLT", "wei.ling.tan"),
+    ("John Goh", "Partner", "JG", "john.goh"),
     ("Marcus Ong", "Senior Associate", "MO", "marcus.ong"),
     ("Priya Nair", "Associate", "PN", "priya.nair"),
     ("Farid Rahman", "Associate", "FR", "farid.rahman"),
@@ -94,16 +94,27 @@ DEMO_BODY_PARAGRAPHS: tuple[str, ...] = (
 
 
 def upsert_users(session: Session) -> list[User]:
-    """Upsert the four demo lawyers by email. Returns them in `DEMO_USERS` order."""
+    """Upsert the four demo lawyers by seat. Returns them in `DEMO_USERS` order.
+
+    Keyed on the seat (position in `DEMO_USERS`) rather than the email, because
+    the email is derived from the name: keying on it means renaming a demo lawyer
+    orphans the existing row - document links, notifications and edits keep
+    pointing at the old identity, and the top bar keeps showing the old name.
+    Existing demo rows are matched by id order and rewritten in place.
+    """
+    existing = session.exec(
+        select(User).where(User.email.like("%@codecouncil.demo")).order_by(User.id)
+    ).all()
     users: list[User] = []
-    for name, role, initials, local in DEMO_USERS:
-        email = f"{local}@lexsentinel.demo"
-        user = session.exec(select(User).where(User.email == email)).first()
+    for seat, (name, role, initials, local) in enumerate(DEMO_USERS):
+        email = f"{local}@codecouncil.demo"
+        user = existing[seat] if seat < len(existing) else None
         if user is None:
             user = User(name=name, email=email, role=role, initials=initials)
             session.add(user)
         else:
             user.name = name
+            user.email = email
             user.role = role
             user.initials = initials
         users.append(user)

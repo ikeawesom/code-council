@@ -1,5 +1,5 @@
 [project]
-name = "lex-sentinel-backend"
+name = "code-council-backend"
 version = "0.1.0"
 description = "Parliamentary change monitor for Singapore law firms - backend"
 requires-python = ">=3.11"

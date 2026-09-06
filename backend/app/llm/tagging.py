@@ -70,12 +70,95 @@ def _title_case(name: str) -> str:
     return " ".join(word.capitalize() for word in name.split())
 
 
+# The concept hubs that make retrieval work. Seeded into every tagging prompt
+# so the model reuses one name per idea instead of minting near-synonyms: after
+# the first ingest 115 of 219 concepts hung off a single clause, and a hub that
+# spans documents is what lets one parliamentary item find every affected
+# contract. Drawn from the names that already spanned two or more documents,
+# plus the tenancy/data-protection hubs the demo relies on. A prompt change,
+# not a schema: adding a name here needs no migration, just a re-ingest.
+CONTROLLED_VOCABULARY: tuple[str, ...] = (
+    "Acceptance Of Offer",
+    "Additional Services",
+    "Appointment",
+    "Arbitration",
+    "Assignment",
+    "Commencement",
+    "Completion",
+    "Completion Date",
+    "Compulsory Acquisition",
+    "Condition Of Property",
+    "Conditions Precedent",
+    "Confidentiality",
+    "Conflict Of Interest",
+    "Costs And Expenses",
+    "Damages",
+    "Default",
+    "Defects Liability",
+    "Definitions",
+    "Delay",
+    "Deposit",
+    "Dispute Resolution",
+    "Encumbrances",
+    "Exclusivity",
+    "Extension Of Time",
+    "Force Majeure",
+    "Forfeiture Of Deposit",
+    "Goods And Services Tax",
+    "Governing Law",
+    "Indemnity",
+    "Insolvency",
+    "Insurance",
+    "Intellectual Property",
+    "Interpretation",
+    "Joint And Several Liability",
+    "Jurisdiction",
+    "Licence",
+    "Limitation Of Liability",
+    "Mediation",
+    "Notice Period",
+    "Notices",
+    "Parties",
+    "Payment Terms",
+    "Permitted Use",
+    "Personal Data",
+    "Purchase Price",
+    "Refund Of Deposit",
+    "Regulatory Compliance",
+    "Remuneration",
+    "Renewal",
+    "Rent",
+    "Rent Review",
+    "Requisitions",
+    "Rescission",
+    "Scope Of Services",
+    "Standard Of Care",
+    "Statutory Compliance",
+    "Subletting",
+    "Survival Of Terms",
+    "Tenancy",
+    "Term",
+    "Termination",
+    "Third Party Rights",
+    "Title",
+    "Vacant Possession",
+    "Variation",
+    "Waiver",
+    "Warranties",
+)
+
+
 def _build_prompt(doc_title: str, clauses: list[tuple[str, str, str]]) -> str:
     lines = [
         f'Identify legal concepts present in each clause of "{doc_title}".',
         "Respond with a JSON object mapping each clause anchor to a list of "
         'concept names, e.g. {"7-2": ["Notice Period", "Termination"]}. Use '
         "[] when a clause has no notable concepts.",
+        "",
+        "Prefer these concept names whenever one fits, spelled exactly as given; "
+        "coin a new name only when no listed concept applies, and never a "
+        "near-synonym of a listed one:",
+        ", ".join(CONTROLLED_VOCABULARY),
         "",
     ]
     for anchor, heading, text in clauses:

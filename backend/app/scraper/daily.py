@@ -89,8 +89,11 @@ def run_scrape(
 
 
 def daily_job() -> None:
-    """Entry point the scheduler calls at 07:00. Never raises - a bad run must
+    """Entry point the scheduler calls at 07:00: scrape, then retrieve -> judge ->
+    propose so proposals are waiting at 08:00. Never raises - a bad run must
     not take down the scheduler thread."""
+    from app.analysis.pipeline import run_analysis
+
     try:
         summary = run_scrape()
         logger.info(
@@ -102,5 +105,13 @@ def daily_job() -> None:
             summary.updated,
             summary.offline,
         )
+        with session_scope() as session:
+            analysis = run_analysis(session)
+        logger.info(
+            "daily analysis done: %d judged, %d tasks, %d proposals",
+            analysis.judged,
+            analysis.tasks_created,
+            analysis.proposals_created,
+        )
     except Exception:
-        logger.exception("daily scrape failed")
+        logger.exception("daily job failed")

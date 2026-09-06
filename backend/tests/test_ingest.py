@@ -262,3 +262,81 @@ def test_title_ignores_document_content_uses_filename_only(tmp_path: Path) -> No
     parsed = parse_document(path)
     assert parsed.title == "Some Contract"
     assert parsed.parse_error is not None
+
+
+def test_bare_lettered_sub_clauses_split_under_their_parent():
+    """The tenancy agreement's "(a) ... (b) ..." covenants, with no digit."""
+    doc = _doc(
+        [
+            Block(kind="heading", text="4. Termination"),
+            Block(kind="paragraph", text="The following applies."),
+            Block(kind="paragraph", text="(a) Right to Terminate"),
+            Block(kind="paragraph", text="The Landlord may terminate."),
+            Block(kind="paragraph", text="(b) Right of Re-Entry"),
+            Block(kind="paragraph", text="The Landlord may re-enter."),
+        ]
+    )
+    clauses = split_clauses(doc, "01-tenancy-agreement-pte")
+    assert [c.anchor for c in clauses] == ["4", "4-a", "4-b"]
+    assert [c.number for c in clauses] == ["4", "4(a)", "4(b)"]
+    assert clauses[1].heading == "Right to Terminate"
+    assert clauses[1].text == "The Landlord may terminate."
+
+
+def test_nested_enumeration_stays_in_its_sub_clause():
+    """"(i)(ii)" listed under "(a)" are body text; the run resumes at "(b)"."""
+    doc = _doc(
+        [
+            Block(kind="heading", text="4. Termination"),
+            Block(kind="paragraph", text="(a) Right to Terminate"),
+            Block(kind="paragraph", text="Terminable on any of the following events:"),
+            Block(kind="paragraph", text="(i) If the rent remains unpaid seven days; or"),
+            Block(kind="paragraph", text="(ii) If there shall be a breach of any covenant."),
+            Block(kind="paragraph", text="(b) Right of Re-Entry"),
+            Block(kind="paragraph", text="The Landlord may re-enter."),
+        ]
+    )
+    clauses = split_clauses(doc, "01-tenancy-agreement-pte")
+    assert [c.anchor for c in clauses] == ["4-a", "4-b"]
+    assert "If the rent remains unpaid" in clauses[0].text
+    assert "(ii) If there shall be a breach" in clauses[0].text
+
+
+def test_out_of_sequence_marker_is_not_a_sub_clause():
+    """A wrapped line starting "(c)" with no "(a)" before it is prose."""
+    doc = _doc(
+        [
+            Block(kind="heading", text="4. Termination"),
+            Block(kind="paragraph", text="(c) of the Act shall not apply to this tenancy."),
+        ]
+    )
+    clauses = split_clauses(doc, "warehouse-lease")
+    assert [c.anchor for c in clauses] == ["4"]
+    assert clauses[0].text.startswith("(c) of the Act")
+
+
+def test_sub_clause_without_a_title_keeps_its_text_as_body():
+    doc = _doc(
+        [
+            Block(kind="heading", text="2. Covenants"),
+            Block(kind="paragraph", text="(a) To pay the said rent in the manner aforesaid."),
+        ]
+    )
+    clauses = split_clauses(doc, "01-tenancy-agreement-pte")
+    assert [c.anchor for c in clauses] == ["2-a"]
+    assert clauses[0].heading == ""
+    # "2. Covenants" has no body of its own, so its label folds into this
+    # clause's text - the documented empty-heading behaviour, unchanged.
+    assert clauses[0].text == "Covenants. To pay the said rent in the manner aforesaid."
+
+
+def test_roman_sub_clauses_split_when_they_start_the_run():
+    doc = _doc(
+        [
+            Block(kind="heading", text="9.1 Interpretation"),
+            Block(kind="paragraph", text="(i) First limb of the definition."),
+            Block(kind="paragraph", text="(ii) Second limb of the definition."),
+        ]
+    )
+    clauses = split_clauses(doc, "joint-venture-agreement")
+    assert [c.anchor for c in clauses] == ["9-1-i", "9-1-ii"]

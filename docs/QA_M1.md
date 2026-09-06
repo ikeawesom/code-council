@@ -1,11 +1,11 @@
 # M1 manual QA - the ingest pipeline
 
-Ten tests, roughly 15 minutes. Each says what to run, what you should see, and
+Nine tests, roughly 15 minutes. Each says what to run, what you should see, and
 what it means if you don't. Report back with the test number and what you got.
 
 **Before you start:** the backend deps are already installed and the vault is
 already built, so you can go straight to test 1. If you want to start from
-nothing, see test 9.
+nothing, see test 8.
 
 **Servers.** Start them yourself:
 
@@ -18,7 +18,7 @@ cd frontend && npm install && npm run dev
 ```
 
 ⚠️ **The frontend is still an M4 stub.** `http://localhost:3000` will render the
-words "Lex Sentinel - dashboard (M4)" and nothing else. That is expected at this
+words "Code Council - dashboard (M4)" and nothing else. That is expected at this
 milestone - there is no UI to QA yet. Tests 6 and 7 use the API directly.
 
 ---
@@ -29,34 +29,19 @@ milestone - there is no UI to QA yet. Tests 6 and 7 use the API directly.
 python scripts/ingest.py --llm mock
 ```
 
-**Expect:** ten lines, one per document, then a summary. Every document except
-the `.doc` shows a non-zero clause count. Runtime a few seconds.
+**Expect:** nine lines, one per document, then a summary. Every document
+shows a non-zero clause count. Runtime a few seconds.
 
 ```
   nda-template                       general                    14 clauses  cached tags
   joint-venture-agreement            mergers-and-acquisition   101 clauses  cached tags
   ...
-Ingested 10 document(s). Vault now holds 10 documents, 219 concepts.
+Ingested 9 document(s). Vault now holds 9 documents, 125 concepts.
 ```
 
-**Fails if:** a traceback appears, or any document reports 0 clauses other than
-`vima-2-0-model-term-sheet-long-form`.
+**Fails if:** a traceback appears, or any document reports 0 clauses.
 
-## 2. The unreadable file is reported, not skipped
-
-Same output as test 1. Find this line:
-
-```
-  vima-2-0-model-term-sheet-long-form  mergers-and-acquisition  0 clauses  !! Legacy binary .doc format is not supported - convert to .docx ...
-```
-
-Then open `vault/documents/vima-2-0-model-term-sheet-long-form.md`. It should
-exist, carry `parse_error:` in the frontmatter, and explain the conversion needed.
-
-**Why this matters:** a document the firm can't parse must stay *visible*. A
-missing file is a document nobody knows they're not monitoring.
-
-## 3. Re-running changes nothing (idempotency)
+## 2. Re-running changes nothing (idempotency)
 
 ```bash
 python scripts/ingest.py --llm mock
@@ -65,14 +50,14 @@ git status --short vault/
 ```
 
 **Expect:** `git status` reports nothing for `vault/` (the generated vault is
-gitignored - see test 10). More importantly, the second run prints the same
+gitignored - see test 9). More importantly, the second run prints the same
 clause counts as the first, and says `cached tags` rather than `tagged`.
 
 **Fails if:** clause counts drift between runs, or the run reports a growing
 number of concepts. That would mean re-ingest is duplicating data - the thing
 that silently corrupts the vault.
 
-## 4. The vault opens in Obsidian
+## 3. The vault opens in Obsidian
 
 Open the `vault/` folder as an Obsidian vault (Open folder as vault).
 
@@ -89,7 +74,7 @@ Open the `vault/` folder as an Obsidian vault (Open folder as vault).
 **This is the demo's knowledge-base story** - if it looks wrong here, it looks
 wrong on stage.
 
-## 5. Clause anchors are stable and sane
+## 4. Clause anchors are stable and sane
 
 Open any document file. Each clause has a hidden anchor comment:
 
@@ -104,7 +89,7 @@ numbering. No duplicates within a file.
 **Why this matters:** `<doc-slug>#<anchor>` is the address every future
 proposal, edit and notification points at. If anchors move, stored work breaks.
 
-## 6. The API serves what was ingested
+## 5. The API serves what was ingested
 
 With the backend running:
 
@@ -129,12 +114,12 @@ curl http://localhost:8000/api/documents/nda-template
 **Expect:** 14 clauses, each with `ref`, `anchor`, `heading`, `text` and a
 `concepts` list.
 
-## 7. Interactive API docs
+## 6. Interactive API docs
 
 Open `http://localhost:8000/docs`. FastAPI's Swagger UI should list `/health`
 and the two document endpoints, and let you run them from the browser.
 
-## 8. Tests and lint
+## 7. Tests and lint
 
 ```bash
 cd backend && python -m pytest -q
@@ -144,7 +129,7 @@ cd .. && python -m ruff check .
 **Expect:** `38 passed` and `All checks passed!`. One Pydantic deprecation
 warning is known and harmless.
 
-## 9. Cold start from nothing
+## 8. Cold start from nothing
 
 The real test that a teammate could clone this and run it.
 
@@ -161,7 +146,7 @@ rebuild with real LLM tagging instead (takes ~10 minutes, one call per document)
 python scripts/ingest.py --llm claude_cli
 ```
 
-## 10. Client documents are not committable
+## 9. Client documents are not committable
 
 ```bash
 git status --short
@@ -186,7 +171,6 @@ the safe default is not committing client documents.
 | 1 | **Concept fragmentation.** 115 of 219 concepts are attached to a single clause (`Solicitors' Details`, `Forfeiture Sharing`). The hubs that matter are healthy - `Notice Period` spans 6 documents, `Governing Law` 8 - but half the graph is dust. | Retrieval still works via the hubs; the graph view will look noisy. | M3. Fix is a controlled vocabulary in the tagging prompt: seed the common Singapore commercial-contract concepts and let the model add new ones only when nothing fits. |
 | 2 | **First clause of some documents is a cover-page blob** with anchor `s0` - party names, recitals and "THIS AGREEMENT made on..." collapsed into one clause. | Cosmetic. It's real document text, just not a real clause. | Optional. Would need a "front matter ends at clause 1" rule. |
 | 3 | **Clause counts fell** from the first run (JVA 121 → 101, Tenancy 37 → 23) once empty and junk sections were filtered out. | None - the removed sections were page headers and form fields with no body. | Done deliberately. |
-| 4 | **`.doc` file is not ingested.** One of nine source documents is legacy binary. | It appears in the vault with a `parse_error` and 0 clauses. | Convert it to `.docx` and re-run ingest, whenever convenient. |
 
 ## What is NOT in M1
 

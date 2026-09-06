@@ -75,7 +75,7 @@ getHansardReport response shape:
     encoding="utf-8" - the Windows default codec raises UnicodeDecodeError.
 
 Every response is written to data/fixtures/ by fixtures.py, so the demo can
-replay offline (LEX_OFFLINE=1). A verified capture already lives at
+replay offline (CC_OFFLINE=1). A verified capture already lives at
 data/fixtures/searchResult/2026-08-01_2026-08-31.json.
 """
 

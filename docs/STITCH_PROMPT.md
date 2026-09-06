@@ -1,4 +1,4 @@
-# Google Stitch prompts - Lex Sentinel dashboard
+# Google Stitch prompts - Code Council dashboard
 
 How to use: pick **Web / Desktop** mode in Stitch (this is a desktop app, not mobile).
 Paste **Prompt 0** first to set the style, then generate **one screen at a time**
@@ -11,7 +11,7 @@ Hansard titles from 5 Aug 2026), so the mockups double as demo screenshots.
 ## Prompt 0 - style foundation (paste first)
 
 ```
-I am designing a desktop web app called Lex Sentinel, used by lawyers at a
+I am designing a desktop web app called Code Council, used by lawyers at a
 Singapore law firm. Every morning it reads new Singapore parliamentary reports
 (Hansard) and flags which clauses in the firm's contracts are affected, then
 proposes an amendment for a lawyer to approve or reject.
@@ -45,7 +45,7 @@ Language rules for all labels:
 
 Layout shell used by every screen:
 - A slim left sidebar, 240px, ink navy background, with the wordmark
-  "Lex Sentinel" at the top and these nav items with simple line icons:
+  "Code Council" at the top and these nav items with simple line icons:
   Tasks, Inbox, Documents, Parliament, Settings. "Tasks" carries a count badge
   showing 7. "Inbox" carries a count badge showing 3.
 - A top bar with a search field ("Search clauses, documents, or parliament
@@ -60,7 +60,7 @@ Layout shell used by every screen:
 ## Prompt 1 - Tasks (the home screen)
 
 ```
-Design the "Tasks" screen for Lex Sentinel, using the style and layout shell
+Design the "Tasks" screen for Code Council, using the style and layout shell
 already described.
 
 This is the morning briefing: everything the system flagged overnight that a
@@ -128,7 +128,7 @@ secondary button "Browse documents".
 ## Prompt 2 - Task detail with redline
 
 ```
-Design the task detail screen for Lex Sentinel, using the established style.
+Design the task detail screen for Code Council, using the established style.
 This is where a lawyer decides whether to accept a suggested amendment.
 
 A back link at the top reads "Back to Tasks". Below it the task title in serif,
@@ -179,7 +179,7 @@ notified. You can undo this from the document history." and two buttons,
 ## Prompt 3 - Inbox
 
 ```
-Design the "Inbox" screen for Lex Sentinel, using the established style.
+Design the "Inbox" screen for Code Council, using the established style.
 
 This is a notification feed telling a lawyer what colleagues changed, so nobody
 is surprised by an edit to a document they rely on.
@@ -204,7 +204,7 @@ Show 6 rows covering these cases:
    within 14 days."
 2. Unread - "Priya Nair approved an amendment to Option To Purchase (JTC
    Industrial) at 08:47 today."
-3. Unread - "Lex Sentinel flagged 7 new items from Parliament at 07:04 today."
+3. Unread - "Code Council flagged 7 new items from Parliament at 07:04 today."
    with the link reading "View tasks" instead of "View changes".
 4. Read - "Marcus Lee dismissed a suggested amendment to NDA template
    yesterday at 16:30."
@@ -221,7 +221,7 @@ line icon and a secondary button "Go to Tasks".
 ## Prompt 4 - Documents, grouped by practice area
 
 ```
-Design the "Documents" screen for Lex Sentinel, using the established style.
+Design the "Documents" screen for Code Council, using the established style.
 
 This is the firm's contract library. It must make clear that practice areas are
 the firm's own folders and can be added or renamed freely - not a fixed list
@@ -241,13 +241,10 @@ REAL ESTATE (3)
   - Option To Purchase (Private Commercial) - 28 clauses - version 1 - badge
     "1 open task"
   - Option To Purchase (JTC Industrial) - 31 clauses - version 2
-MERGERS & ACQUISITIONS (4)
+MERGERS & ACQUISITIONS (3)
   - Joint Venture Agreement - 67 clauses - version 1 - badge "1 open task"
   - JVA Term Sheet - 19 clauses - version 1
   - Project Folklore Term Sheet (Final) - 23 clauses - version 1
-  - VIMA 2.0 Model Term Sheet (Long Form) - badge "Unsupported file type" in
-    amber, with the caption "This .doc file could not be read. Convert it to
-    .docx and add it again."
 ENERGY & INFRASTRUCTURE (2)
   - Agreement for Consultancy (BCA) - 35 clauses - version 1 - badge "1 open
     task"
@@ -260,8 +257,8 @@ metadata in grey, any badges, and a chevron on the right indicating it opens.
 Rows with open tasks should read as gently attention-worthy without shouting.
 
 At the bottom of the list, show a dashed-outline placeholder card reading
-"Add a practice area" with the caption "Create a folder in your inbox and Lex
-Sentinel will pick it up automatically." This communicates that the taxonomy is
+"Add a practice area" with the caption "Create a folder in your inbox and Code
+Council will pick it up automatically." This communicates that the taxonomy is
 the firm's, not the software's.
 ```
 

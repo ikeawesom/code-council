@@ -9,6 +9,7 @@ venv/
 node_modules/
 .next/
 out/
+*.tsbuildinfo
 
 # env
 .env
@@ -36,6 +37,9 @@ vault/graph.json
 # source documents (client confidential - never commit)
 data/inbox/*
 !data/inbox/.gitkeep
+
+# obsidian workspace config (per-machine, not part of the vault contract)
+.obsidian/
 
 # os
 .DS_Store

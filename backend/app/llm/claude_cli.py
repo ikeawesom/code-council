@@ -34,7 +34,7 @@ class ClaudeCliProvider:
             return cached
 
         if settings.offline:
-            raise LLMError("claude_cli provider unavailable while offline (LEX_OFFLINE=1)")
+            raise LLMError("claude_cli provider unavailable while offline (CC_OFFLINE=1)")
 
         try:
             # The prompt goes in on stdin, never as an argv element: Windows caps

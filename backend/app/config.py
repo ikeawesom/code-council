@@ -18,6 +18,16 @@ class Settings(BaseSettings):
     timezone: str = "Asia/Singapore"
     scheduler_enabled: bool = True
     scrape_lookback_days: int = 7
+    # M3 retrieval: top-K candidate clauses per item, and the cost gate - an
+    # item whose best hybrid score is below `retrieve_min_score` never reaches
+    # the judge. The default is tuned in analysis/retrieve.py against the real
+    # 5 Aug 2026 sitting so the planted demo item clears it on merit.
+    retrieve_top_k: int = 5
+    retrieve_min_score: float = 20.0
+    retrieve_query_chars: int = 6000
+    retrieve_query_terms: int = 40
+    # Hard cap on judge calls per run, applied after the gate, best items first.
+    analysis_max_items: int = 15
 
     vault_dir: Path = REPO_ROOT / "vault"
     inbox_dir: Path = REPO_ROOT / "data" / "inbox"
@@ -26,7 +36,7 @@ class Settings(BaseSettings):
     db_path: Path = REPO_ROOT / "data" / "app.db"
 
     class Config:
-        env_prefix = "LEX_"
+        env_prefix = "CC_"
         env_file = ".env"
 
 

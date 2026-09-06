@@ -173,7 +173,7 @@ class Task(SQLModel, table=True):
 
     id: int | None = Field(default=None, primary_key=True)
     parliament_item_id: int = Field(foreign_key="parliament_items.id", index=True)
-    reference: str = Field(index=True, unique=True)  # e.g. "LS-2026-0007"
+    reference: str = Field(index=True, unique=True)  # e.g. "CC-2026-0007"
     status: str = Field(default="new", index=True)  # one of TASK_STATUSES
     assignee_id: int | None = Field(default=None, foreign_key="users.id")
     # Badge 1. Max severity across this task's proposals; recomputed, never asked for.

@@ -208,7 +208,7 @@ _GENERATED_BEGIN = "<!-- BEGIN GENERATED: documents and concepts (do not edit be
 _GENERATED_END = "<!-- END GENERATED -->"
 
 _DEFAULT_INDEX_INTRO = """---
-title: Lex Sentinel vault
+title: Code Council vault
 type: index
 ---
 

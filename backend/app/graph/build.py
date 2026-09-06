@@ -12,7 +12,7 @@ nodes and edges are sorted so the output is stable across runs (only
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 
 import frontmatter
@@ -91,7 +91,12 @@ def build_graph(write: bool = True) -> dict:
 
     for fm in _parliament_frontmatter():
         slug = fm.get("slug")
+        # YAML parses an unquoted 2026-08-05 into a datetime.date, which is
+        # not JSON-serialisable and is not what VAULT_FORMAT.md section 6
+        # specifies - the node carries the ISO string.
         sitting_date = fm.get("sitting_date", "")
+        if isinstance(sitting_date, date):
+            sitting_date = sitting_date.isoformat()
         item_id = f"parliament:{sitting_date}-{slug}"
         nodes[item_id] = {
             "id": item_id,

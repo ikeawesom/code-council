@@ -1,6 +1,6 @@
-# Lex Sentinel - UI implementation plan (M4)
+# Code Council - UI implementation plan (M4)
 
-Source designs: Google Stitch project `3954592498826862557` ("Lex Sentinel Legal
+Source designs: Google Stitch project `3954592498826862557` ("Code Council Legal
 Portal"), five desktop screens downloaded to `docs/stitch/<n>-<slug>/` as
 `code.html` + `screen.png`. The HTML is Stitch export: Tailwind **CDN**, inline
 `tailwind.config`, Material Symbols icons, Plus Jakarta Sans. It is reference
@@ -204,7 +204,8 @@ Feature components:
   names/documents, one-line preview, action link, unread dot + tint
 - `SectorSection` (screen 5) - collapsible practice-area group with count
 - `DocumentRow` (screen 5) - icon, name, clause count, version, badges, chevron
-- `UnsupportedFileNotice` (screen 5) - the `.doc` failure card
+- `UnsupportedFileNotice` (screen 5) - the parse-failure card, rendered for any
+  document the parser could not read (none in the current corpus)
 
 ---
 
